@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './cotizacion.component.html',
-  styleUrl: './cotizacion.component.css'
+  styleUrl: './cotizacion.component.scss'
 })
 export class CotizacionComponent {
 

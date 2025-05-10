@@ -7,7 +7,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
   standalone: true,
   imports: [MatSlideToggleModule],
   templateUrl: './public-header.component.html',
-  styleUrl: './public-header.component.css'
+  styleUrl: './public-header.component.scss'
 })
 export class PublicHeaderComponent {
 

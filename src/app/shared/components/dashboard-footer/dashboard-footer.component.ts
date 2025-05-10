@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './dashboard-footer.component.html',
-  styleUrl: './dashboard-footer.component.css'
+  styleUrl: './dashboard-footer.component.scss'
 })
 export class DashboardFooterComponent {
 

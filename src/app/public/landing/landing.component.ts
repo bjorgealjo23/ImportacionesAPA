@@ -7,7 +7,7 @@ import { PublicHeaderComponent, PublicFooterComponent } from './../components'
   standalone: true,
   imports: [RouterOutlet, PublicHeaderComponent, PublicFooterComponent],
   templateUrl: './landing.component.html',
-  styleUrl: './landing.component.css'
+  styleUrl: './landing.component.scss'
 })
 export class LandingComponent {
 

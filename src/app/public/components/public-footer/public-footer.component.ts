@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './public-footer.component.html',
-  styleUrl: './public-footer.component.css'
+  styleUrl: './public-footer.component.scss'
 })
 export class PublicFooterComponent {
 
