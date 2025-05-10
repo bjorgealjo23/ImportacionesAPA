@@ -1,0 +1,4 @@
+.btn {
+  @include button-style($color-secondary, $color-primary);
+}
+

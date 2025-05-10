@@ -1,0 +1,14 @@
+@mixin button-style($background, $color: #fff) {
+  background-color: $background;
+  color: $color;
+  font-weight: bold;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-family: $font-base;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
