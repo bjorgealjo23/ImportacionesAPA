@@ -1,4 +1,26 @@
+@use './mixins' as *;
+@use './variables' as *;
+
+// --- Colores generales y globales
+
+body {
+  background: rgb(167, 175, 211);
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+
+
+
 .btn {
   @include button-style($color-secondary, $color-primary);
+}
+
+.text-style {
+  @include text-style($font-size-base ,$color-secondary);
+}
+
+.text-footer {
+  @include text-footer($font-size-base, $color-primary);
 }
 

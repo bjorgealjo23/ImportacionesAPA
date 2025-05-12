@@ -1,0 +1,6 @@
+@use './../../../../styles/variables' as *;
+
+.style-section {
+    background: $color-secondary;
+    color: $color-primary;
+}

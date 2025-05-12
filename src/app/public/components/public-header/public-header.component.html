@@ -1,3 +1,11 @@
-<p>Aqui va el header</p>
-
-<mat-slide-toggle>Toggle me!</mat-slide-toggle>
+<p-menubar [model]="items" class="custom-menubar">
+  <ng-template pTemplate="start">
+    <img src="assets/images/logo.svg" alt="Logo" height="66" />
+  </ng-template>
+  <ng-template pTemplate="end">
+    <div style="display: flex; align-items: center; gap: 13px;">
+        <p class="text-style" style="margin-top: 10px !important;">Contactanos</p>
+        <button class="btn"> <i class="far fa-user-circle"></i> Acceso</button>
+    </div>   
+  </ng-template>  
+</p-menubar>

@@ -1,8 +1,11 @@
+@use './variables' as *;
+
 @mixin button-style($background, $color: #fff) {
   background-color: $background;
   color: $color;
-  font-weight: bold;
-  padding: 10px;
+  font-size: $font-size-in-buttons;
+  font-weight: 500;
+  padding: 11px;
   border: none;
   border-radius: 5px;
   font-family: $font-base;
@@ -11,4 +14,21 @@
   &:hover {
     opacity: 0.9;
   }
+}
+
+@mixin text-style ($font-size, $color) {
+  margin-top: 14px !important;
+  font-size: $font-size;
+  color: $color;
+  font-weight: 300;
+  cursor: pointer;
+  font-family: $font-base;
+}
+
+@mixin text-footer ($font-size, $color){
+  font-size: $font-size;
+  color: $color;
+  font-weight: 400;
+  cursor: pointer;
+  font-family: $font-base;
 }
