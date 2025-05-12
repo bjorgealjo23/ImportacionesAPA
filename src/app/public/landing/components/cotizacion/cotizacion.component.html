@@ -1,1 +1,146 @@
-<p>cotizacion works!</p>
+<div class="grid mt-1 p-5">
+    <div class="col-12 md:col-5 ">
+
+        <div class="text-style-title">Cotización de Transporte de carga Marítima y Cabotaje</div>
+        <ul>
+            <li> <i class="fas fa-check-circle mr-2"></i> Movemos tu carga con seguridad, puntualidad y cobertura
+                internacional.</li>
+            <li> <i class="fas fa-check-circle mr-2"></i> Soluciones rápidas, confiables y adaptadas a tus necesidades
+                logísticas.</li>
+        </ul>
+        <div style="text-align: center;">
+            <img src="assets/images/barco.jpg" class="justify-content-center" style="border-radius: 10px;"
+                alt="imagen Barco" [style]="{ width:'502px', height:'268px'}">
+        </div>
+    </div>
+    <div class="col-12 md:col-7 ">
+        <div class="card flex justify-content-center text-align" [style]="{ width:'800px !important' }">
+            <p-card header="Cotización Comercial" class="text-style-subtitle text-center border-card">
+                <ng-template pTemplate="header">
+                </ng-template>
+
+                <div class="grid ">
+                    <div class="col">
+                        <p-floatLabel class="w-full">
+                            <input pInputText id="username" class="w-full" [(ngModel)]="value" />
+                            <label for="username">RUC</label>
+                        </p-floatLabel>
+                    </div>
+                    <div class="col">
+                        <p-floatLabel class="w-full">
+                            <input pInputText id="username" class="w-full" [(ngModel)]="value" />
+                            <label for="username">Razón Social</label>
+                        </p-floatLabel>
+                    </div>
+                </div>
+                <div class="grid mt-2">
+                    <div class="col-12">
+                        <p-floatLabel class="w-full">
+                            <input pInputText id="username3" class="w-full" [(ngModel)]="value" />
+                            <label for="username3">Correo Corporativo</label>
+                        </p-floatLabel>
+                    </div>
+                </div>
+
+                <div class="text-style" style="text-align: start;">
+                    De
+                </div>
+                <div class="grid mt-2">
+                    <div class="col">
+                        <p-floatLabel class="w-full">
+                            <input pInputText id="username" class="w-full" [(ngModel)]="value" />
+                            <label for="username">País</label>
+                        </p-floatLabel>
+                    </div>
+                    <div class="col">
+                        <p-floatLabel class="w-full">
+                            <input pInputText id="username" class="w-full" [(ngModel)]="value" />
+                            <label for="username">Ciudad</label>
+                        </p-floatLabel>
+                    </div>
+                </div>
+
+                <div class="text-style" style="text-align: start;">
+                    Para
+                </div>
+                <div class="grid mt-2">
+                    <div class="col">
+                        <p-floatLabel class="w-full">
+                            <input pInputText id="username" class="w-full" [(ngModel)]="value" />
+                            <label for="username">País</label>
+                        </p-floatLabel>
+                    </div>
+                    <div class="col">
+                        <p-floatLabel class="w-full">
+                            <input pInputText id="username" class="w-full" [(ngModel)]="value" />
+                            <label for="username">Ciudad</label>
+                        </p-floatLabel>
+                    </div>
+                </div>
+
+                <!-- -- Para los cards de articulos -->
+                <div class="grid">
+                    <div class="col-6 mt-1" style="text-align: start;">
+                        <span class="text-style">Embarque</span>
+                    </div>
+                    <div class="col-6 mt-1" style="text-align: end;">
+                        <button class="btn-inverso"><i class="fas fa-plus-circle mr-1"></i> Agregar</button>
+                    </div>
+                </div>
+                <div class="border-card mt-1 p-2">
+                    <div class="grid ">
+                        <div class="col-6 mt-1" style="text-align: start;">
+                            <span class="text-style"># 1</span>
+                        </div>
+                        <div class="col-6 mt-1" style="text-align: end;">
+                            <p-button icon="pi pi-times" [rounded]="true" styleClass="icon-close" />
+                        </div>
+                    </div>
+
+                    <div class="grid mt-1">
+                        <div class="col-4">
+                            <p-floatLabel class="w-full">
+                                <input pInputText id="username" class="w-full" [(ngModel)]="value" />
+                                <label for="username">Número contenedores</label>
+                            </p-floatLabel>
+                        </div>
+                        <div class="col-4">
+                            <p-floatLabel class="w-full">
+                                <input pInputText id="username" class="w-full" [(ngModel)]="value" />
+                                <label for="username">Número de bultos</label>
+                            </p-floatLabel>
+                        </div>
+                        <div class="col-4">
+                            <p-floatLabel class="w-full">
+                                <input pInputText id="username" class="w-full" [(ngModel)]="value" />
+                                <label for="username">Peso total</label>
+                            </p-floatLabel>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-2 text-left">
+                    <button class="btn">Realizar cotización</button>
+                </div>
+
+                <div class="text-style text-left" style="font-size: 12px !important;">
+                    *El precio es estimado. Para un valor exacto, contacta a atención al cliente
+                </div>
+
+                <div class="price-banner mt-2">
+                    <div class="label">Precio desde</div>
+                    <div class="price">PEN <strong>1254.48</strong></div>
+                </div>
+
+
+
+                <ng-template pTemplate="footer">
+                    <div class="flex gap-3 mt-1">
+                        <p>footer</p>
+                    </div>
+                </ng-template>
+            </p-card>
+        </div>
+    </div>
+
+</div>

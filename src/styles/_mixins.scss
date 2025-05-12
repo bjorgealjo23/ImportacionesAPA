@@ -16,13 +16,33 @@
   }
 }
 
+@mixin button-style-inverso($background, $color: #fff) {
+  background-color: $background;
+  color: $color;
+  font-size: $font-size-in-buttons;
+  font-weight: 500;
+  padding: 5px;
+  border: 2px solid $color;
+  border-radius: 5px;
+  font-family: $font-base;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+
+
+
 @mixin text-style ($font-size, $color) {
   margin-top: 14px !important;
   font-size: $font-size;
   color: $color;
-  font-weight: 300;
+  font-weight: bold;
   cursor: pointer;
   font-family: $font-base;
+
 }
 
 @mixin text-footer ($font-size, $color){
@@ -31,4 +51,13 @@
   font-weight: 400;
   cursor: pointer;
   font-family: $font-base;
+}
+
+@mixin text-style-subtitle($font-size, $color, $bold) {
+  font-size: $font-size;
+  color: $color;
+  font-weight: $bold;
+  cursor: pointer;
+  font-family: $font-base;
+
 }

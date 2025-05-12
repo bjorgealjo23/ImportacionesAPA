@@ -1,11 +1,16 @@
-<p-menubar [model]="items" class="custom-menubar">
+<p-menubar [model]="items.slice(0, 3)" class="custom-menubar">
   <ng-template pTemplate="start">
     <img src="assets/images/logo.svg" alt="Logo" height="66" />
   </ng-template>
+
   <ng-template pTemplate="end">
     <div style="display: flex; align-items: center; gap: 13px;">
-        <p class="text-style" style="margin-top: 10px !important;">Contactanos</p>
-        <button class="btn"> <i class="far fa-user-circle"></i> Acceso</button>
-    </div>   
-  </ng-template>  
+      <span class="custom-menu-item custom-menuitem" (click)="items[3].command?.()">
+        {{ items[3].label }}
+      </span>
+      <button class="btn">
+        <i class="far fa-user-circle"></i> Acceso
+      </button>
+    </div>
+  </ng-template>
 </p-menubar>

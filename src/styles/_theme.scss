@@ -4,7 +4,7 @@
 // --- Colores generales y globales
 
 body {
-  background: rgb(167, 175, 211);
+  background: $color-third;
   padding: 0 !important;
   margin: 0 !important;
 }
@@ -19,9 +19,12 @@ li {
 
 
 
-
 .btn {
   @include button-style($color-secondary, $color-primary);
+}
+
+.btn-inverso {
+  @include button-style-inverso($color-primary, $color-secondary);
 }
 
 .text-style {
@@ -30,5 +33,13 @@ li {
 
 .text-footer {
   @include text-footer($font-size-base, $color-primary);
+}
+
+.text-style-title {
+  @include text-style($font-size-title-small ,$color-secondary);
+}
+
+.text-style-subtitle {
+  @include text-style-subtitle($font-size-subtitle-large ,$color-secondary, $font-weight-bold);
 }
 

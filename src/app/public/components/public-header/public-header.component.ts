@@ -7,14 +7,27 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-public-header',
   standalone: true,
-  imports: [MenubarModule,BadgeModule,CommonModule,AvatarModule],
+  imports: [MenubarModule, BadgeModule, CommonModule, AvatarModule],
   templateUrl: './public-header.component.html',
   styleUrl: './public-header.component.scss'
 })
 export class PublicHeaderComponent {
-items = [
-  { label: 'Inicio', styleClass:'text-style' },
-  { label: 'Cotización' , styleClass:'text-style'},
-  { label: 'Sobre nosotros' , styleClass:'text-style'},
-];
+  items = [
+    { label: 'Inicio', command: () => this.Home()},
+    { label: 'Cotización' },
+    { label: 'Sobre nosotros'},
+    { label: 'Contáctanos', icon: 'pi pi-comments', command: () => this.irAContacto() }
+  ];
+
+
+  irAContacto() {
+    // Lógica para navegar o mostrar sección
+    console.log('Ir a Contactanos');
+  }
+
+  Home () {
+    console.log(`si se precioan`)
+  }
+
+
 }
