@@ -2,15 +2,22 @@
 
 
 
+
 ::ng-deep .custom-menubar .p-menubar {
   background-color: $color-primary !important;
   color: $color-primary !important;
   font-family: $font-base;
   border-radius: 0;
+
+     max-width: 85%;
+    margin: 0 auto;
+
+   background: red !important;
 }
 
 ::ng-deep .custom-menubar .p-menuitem-link {
   color: $color-primary !important;
+  background: purple !important;
 
   &:hover {
     background-color: $color-third !important;
@@ -19,3 +26,9 @@
   }
 }
 
+
+.style-inicio-imagen{
+  width: 197px !important;
+  height: 100px !important;
+  margin-left: 10px !important;
+}
