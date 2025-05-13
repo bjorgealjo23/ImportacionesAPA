@@ -1,0 +1,26 @@
+@use './../../../../../styles/variables' as *;
+
+.style-section-nostros {
+    background: $color-primary;
+    padding: 15px;
+    font-size: 18px !important;
+}
+
+.style-marco-nosotros {
+    max-width: 85%;
+    margin: 0 auto;
+}
+
+.container {
+    max-width: 600px !important;
+    line-height: 28px !important;
+    align-items: center;
+}
+
+.text-subtitulo-nosotros {
+    font-size: 33px;
+    font-weight: 700;
+    color: $color-secondary;
+}
+
+

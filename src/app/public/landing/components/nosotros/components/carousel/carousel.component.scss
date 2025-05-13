@@ -1,0 +1,42 @@
+@use './../../../../../../../styles/variables' as *;
+
+::ng-deep .p-carousel-prev,
+::ng-deep .p-carousel-next {
+  background-color: #f5f5f5;
+  color: #333;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+::ng-deep .p-carousel-prev:hover,
+::ng-deep .p-carousel-next:hover {
+  background-color: $color-secondary;
+  color: #fff;
+}
+
+::ng-deep .p-carousel-indicators .p-carousel-indicator button {
+  background-color: $color-third !important;
+  width: 17px;
+  height: 12px;
+  border-radius: 20%;
+}
+
+// -- para el activo
+::ng-deep .p-carousel-indicators .p-carousel-indicator.p-highlight button {
+  background-color: $color-secondary !important; 
+}
+
+.image-container {
+  padding: 10px;
+  text-align: center;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(9, 30, 44, 0.2);
+}

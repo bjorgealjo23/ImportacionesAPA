@@ -1,0 +1,28 @@
+@use './../../../../../../../styles/variables' as *;
+
+.container-card {
+    max-width: 345px !important;
+    max-height: 290px !important;
+    padding: 18px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    background-color: white;
+}
+
+.subtitle-card {
+    font-weight: 700;
+    color: $color-secondary;
+    font-size: $font-size-base;
+}
+
+.text-card {
+    font-weight: lighter;
+    font-size: $font-size-base;
+    color: $color-secondary;
+}
+
+.icon-card {
+    color: $color-secondary;
+    font-size: 120px !important;
+    text-align: center;
+}

@@ -1,0 +1,7 @@
+<p-carousel [value]="lstImagenes" [numVisible]="1" [numScroll]="1" [circular]="false">
+    <ng-template pTemplate="item" let-image>
+        <div class="image-container">
+            <img [src]="'assets/images/carousel/'+image.name" [alt]="image.alt" class="carousel-image" />
+        </div>
+    </ng-template>
+</p-carousel>

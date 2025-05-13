@@ -36,7 +36,7 @@ li {
 }
 
 .text-style-title {
-  @include text-style($font-size-title-small ,$color-secondary);
+  @include text-style($font-size-title-large ,$color-secondary);
 }
 
 .text-style-subtitle {
