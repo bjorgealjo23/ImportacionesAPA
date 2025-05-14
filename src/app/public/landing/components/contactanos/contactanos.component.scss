@@ -1,0 +1,39 @@
+@use './../../../../../styles/variables' as *;
+
+.style-section-contactanos {
+    background: $color-third;
+    padding: 15px;
+    font-size: 18px !important;
+}
+
+.style-marco-contactanos {
+    max-width: 75%;
+    margin: 0 auto;
+}
+
+// -- para los clamps
+
+.style-titulo-contactanos {
+    font-size: clamp(24px, 2.5vw, 38px);
+    font-weight: 800;
+    margin-bottom: clamp(10px, 1vw, 15px);
+    color: $color-secondary;
+}
+
+.style-texto-contactanos {
+    font-size: clamp(14px, 1vw, 20px);
+    line-height: 1.6;
+    margin-bottom: clamp(10px, 1vw, 15px);
+}
+
+.imagen-contactanos {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.container-adviser-contacto {
+    text-align: center;
+    margin: auto 0;
+}

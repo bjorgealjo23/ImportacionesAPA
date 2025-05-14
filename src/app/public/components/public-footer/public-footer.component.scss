@@ -1,9 +1,10 @@
 @use './../../../../styles/variables' as *;
 
-.style-section {
+.style-section-footer {
     background: $color-secondary;
     color: $color-primary;
     margin-top: 12px !important;
+
 }
 
 .style-icons-redes {
@@ -17,8 +18,13 @@
 }
 
 .no-padding {
-  padding-left: 0;
-  margin: 0;
-  list-style-position: inside;
-  line-height: $space-interlineado !important;
+    padding-left: 0;
+    margin: 0;
+    list-style-position: inside;
+    line-height: $space-interlineado !important;
+    text-align: center;
+}
+
+.no-padding li {
+    text-align: center !important;
 }

@@ -1,0 +1,16 @@
+@use './../../../../../../../styles/variables' as *;
+
+
+:host ::ng-deep .style-section-contac-form input,
+:host ::ng-deep .style-section-contac-form textarea {
+    border: 1px solid $color-secondary;
+}
+
+:host ::ng-deep .form-wrapper {
+  width: 100%;
+  max-width: 850px;      
+  margin-inline: auto;   
+  padding: 1rem;       
+}
+
+
