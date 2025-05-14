@@ -1,6 +1,6 @@
 @use './variables' as *;
 
-@mixin button-style($background, $color: #fff) {
+@mixin button-style($background, $color: #fff, $anchobtn) {
   background-color: $background;
   color: $color;
   font-size: $font-size-in-buttons;
@@ -9,6 +9,7 @@
   border: none;
   border-radius: 5px;
   font-family: $font-base;
+  width: $anchobtn !important;
   cursor: pointer;
 
   &:hover {
@@ -45,13 +46,6 @@
 
 }
 
-@mixin text-footer ($font-size, $color){
-  font-size: $font-size;
-  color: $color;
-  font-weight: 400;
-  cursor: pointer;
-  font-family: $font-base;
-}
 
 @mixin text-style-subtitle($font-size, $color, $bold) {
   font-size: $font-size;

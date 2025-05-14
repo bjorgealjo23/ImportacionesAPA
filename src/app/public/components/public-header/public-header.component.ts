@@ -12,20 +12,16 @@ import { CommonModule } from '@angular/common';
   styleUrl: './public-header.component.scss'
 })
 export class PublicHeaderComponent {
+
+
   items = [
-    { label: 'Inicio', command: () => this.Home()},
-    { label: 'Cotización' },
-    { label: 'Sobre nosotros'},
-    { label: 'Contáctanos', icon: 'pi pi-comments', command: () => this.irAContacto() }
+    { label: 'Inicio', routerLink: '/' },
+    { label: 'Cotización', routerLink: '/cotizacion' },
+    { label: 'Sobre Nosotros', routerLink: '/nosotros' },
+    // { label: 'Contáctanos', routerLink: '/contactanos' }
   ];
 
-
-  irAContacto() {
-    // Lógica para navegar o mostrar sección
-    console.log('Ir a Contactanos');
-  }
-
-  Home () {
+  Home() {
     console.log(`si se precioan`)
   }
 

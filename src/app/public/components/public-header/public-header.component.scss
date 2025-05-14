@@ -1,34 +1,73 @@
 @use '../../../../styles/variables' as *;
 
+.custom-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10rem;
+  background-color: white;
+  border: 2px solid $color-secondary;
 
 
+  .style-inicio-imagen {
+    width: 190px !important;
+    height: 90px !important;
+    margin-left: 10px !important;
+  }
 
-::ng-deep .custom-menubar .p-menubar {
-  background-color: $color-primary !important;
-  color: $color-primary !important;
-  font-family: $font-base;
-  border-radius: 0;
+  .nav-items {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    margin-top: 35px;
+    margin-left: 25px;
 
-     max-width: 85%;
-    margin: 0 auto;
+    .nav-item {
+      a {
+        text-decoration: none;
+        color: $color-secondary;
+        font-weight: 500;
+        transition: color 0.3s;
 
-   background: red !important;
-}
+        &:hover {
+          color: $color-secondary;
+          font-weight: 700 !important;
+        }
+      }
 
-::ng-deep .custom-menubar .p-menuitem-link {
-  color: $color-primary !important;
-  background: purple !important;
+      &.btn-item {
+        margin-left: 1.5rem;
 
-  &:hover {
-    background-color: $color-third !important;
-    border-radius: 10px !important;
-    font-weight: 500;
+        .access-btn {
+          background-color: $color-primary;
+          color: #fff;
+          border: none;
+          padding: 0.5rem 1rem;
+          border-radius: 4px;
+          cursor: pointer;
+          font-weight: bold;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          transition: background-color 0.3s;
+
+          &:hover {
+            background-color: darken($color-primary, 10%);
+          }
+        }
+      }
+    }
   }
 }
 
 
-.style-inicio-imagen{
-  width: 197px !important;
-  height: 100px !important;
-  margin-left: 10px !important;
+.container-derecha {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 1rem;
 }

@@ -1,16 +1,21 @@
-<p-menubar [model]="items.slice(0, 3)" class="custom-menubar">
-  <ng-template pTemplate="start">
-    <img src="assets/images/logo.svg" alt="Logo" height="66" class="style-inicio-imagen" />
-  </ng-template>
+<nav class="custom-navbar" >
+  <img src="assets/images/logo.svg" alt="Logo" class="style-inicio-imagen" />
 
-  <ng-template pTemplate="end">
-    <div style="display: flex; align-items: center; gap: 13px;">
-      <span class="custom-menu-item custom-menuitem" (click)="items[3].command?.()">
-        {{ items[3].label }}
-      </span>
-      <button class="btn">
-        <i class="far fa-user-circle"></i> Acceso
-      </button>
+  <ul class="nav-items" >
+    <ng-container *ngFor="let item of items">
+      <li class="nav-item">
+        <a [routerLink]="item.routerLink">{{ item.label }}</a>
+      </li>
+    </ng-container>
+    <div  class="container-derecha">
+      <li class="nav-item">
+        <a [routerLink]="'contactanos'">Contáctanos</a>
+      </li>
+      <li class="nav-item btn-item">
+        <button class="btn">
+          <i class="far fa-user-circle"></i> Acceso
+        </button>
+      </li>
     </div>
-  </ng-template>
-</p-menubar>
+  </ul>
+</nav>

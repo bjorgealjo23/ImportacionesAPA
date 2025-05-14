@@ -9,12 +9,15 @@
 .style-marco-contactanos {
     max-width: 75%;
     margin: 0 auto;
+    @media (max-width: 768px) {
+        max-width: 100%;
+    }
 }
 
 // -- para los clamps
 
 .style-titulo-contactanos {
-    font-size: clamp(24px, 2.5vw, 38px);
+    font-size: clamp(24px, 2.5vw, 40px);
     font-weight: 800;
     margin-bottom: clamp(10px, 1vw, 15px);
     color: $color-secondary;
@@ -37,3 +40,4 @@
     text-align: center;
     margin: auto 0;
 }
+
