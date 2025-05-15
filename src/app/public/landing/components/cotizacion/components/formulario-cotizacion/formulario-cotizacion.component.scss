@@ -1,0 +1,53 @@
+@use './../../../../../../../styles/variables' as *;
+
+.border-card {
+    border: 4px solid $color-secondary;
+    border-radius: 10px !important;
+}
+:host ::ng-deep .icon-close {
+    width: 25px  !important;
+    height:25px !important;
+    background: $color-secondary;
+    border:none;
+}
+
+.input-border {
+  border: 2px solid $color-secondary;
+}
+
+
+// -- Para el pill de abajo 
+
+.price-banner {
+  display: flex;
+  width: 700px !important;
+  height: 70px !important;
+  border: 1px solid #002F4B;
+  font-family: sans-serif;
+
+}
+
+.label {
+  background-color: #002F4B;
+  color: white;
+  padding: 10px 20px;
+  clip-path: polygon(0 0, 94% 0, 85% 100%, 0% 100%);
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  width: 450px !important;
+}
+
+.price {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  color: #002F4B;
+  font-size: 25px;
+}
+
+:host::ng-deep .title-style {
+  font-weight: bolder !important;
+  font-size: 35px !important;
+}

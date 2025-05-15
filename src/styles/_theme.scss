@@ -39,9 +39,9 @@ li {
   @include text-style($font-size-base , $color-secondary);
 }
 
-.text-style-title {
-  @include text-style($font-size-title-large , $color-secondary);
-}
+// .text-style-title {
+//   @include text-style($font-size-title-large , $color-secondary);
+// }
 
 .text-style-subtitle {
   @include text-style-subtitle($font-size-subtitle-large , $color-secondary, $font-weight-bold);
