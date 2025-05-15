@@ -1,2 +1,8 @@
--- Angular Material v.18 compatible con angular 17
-npm install @angular/material@18 @angular/cdk@18 @angular/animations@17
+-- prime ng v17
+-- tailwind 
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init
+-- creacion del postcss.config.ts
+-- solo colocar tailwind para consumir sus estilos
+
+npm uninstall tailwindcss postcss autoprefixer

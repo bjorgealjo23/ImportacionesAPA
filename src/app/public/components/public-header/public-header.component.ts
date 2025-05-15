@@ -13,6 +13,7 @@ import { CommonModule } from '@angular/common';
 })
 export class PublicHeaderComponent {
 
+  isMenuOpen:boolean = false;
 
   items = [
     { label: 'Inicio', routerLink: '/' },

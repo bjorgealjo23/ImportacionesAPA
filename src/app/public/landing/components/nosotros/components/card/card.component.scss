@@ -1,7 +1,7 @@
 @use './../../../../../../../styles/variables' as *;
 
 .container-card {
-    max-width: 345px !important;
+    max-width: 320px !important;
     max-height: 290px !important;
     padding: 18px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -10,19 +10,21 @@
 }
 
 .subtitle-card {
-    font-weight: 700;
+    font-weight: 800;
     color: $color-secondary;
-    font-size: $font-size-base;
+    font-size: clamp(14px, 1rem, 19px);
 }
 
 .text-card {
     font-weight: lighter;
-    font-size: $font-size-base;
+    font-size: clamp(14px, 0.9rem, 18px) !important;
     color: $color-secondary;
 }
 
 .icon-card {
     color: $color-secondary;
-    font-size: 120px !important;
+    // font-size: 120px !important;
+    font-size: clamp(90px, 1rem, 120px) !important;
     text-align: center;
 }
+

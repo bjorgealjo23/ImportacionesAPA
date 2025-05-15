@@ -7,13 +7,19 @@
 }
 
 .style-marco-nosotros {
-    max-width: 80%;
+
     margin: 0 auto;
+    @media (max-width: 769px) {
+        max-width: 100%;
+    }
+    @media (min-width: 769px) {
+        max-width: 87%;
+    }
 }
 
 .container {
     max-width: 600px !important;
-    line-height: 28px !important;
+    line-height: 24px !important;
     align-items: center;
 }
 
