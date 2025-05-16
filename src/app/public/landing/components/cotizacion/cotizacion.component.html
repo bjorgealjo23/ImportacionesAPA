@@ -1,9 +1,8 @@
 <div class="style-section-cotizacion">
     <div class="style-marco-cotizacion">
 
-        <div class="grid">
-            <div class="col-12 md:col-6 ">
-
+        <div class="grid" style="min-height: 100vh;">
+            <div class="col-12 sm:col-5 md:col-5 lg:col-5" style="border: 2px solid purple; height: 100%; margin-top: 4%;" >
                 <div class="text-style-title">Cotización de Transporte de carga Marítima y Cabotaje</div>
                 <ul class="style-ul-cotiza">
                     <li >
@@ -15,13 +14,12 @@
                         Soluciones rápidas, confiables y adaptadas a tus necesidades logísticas.
                     </li>
                 </ul>
-
-                <div style="text-align: center; margin-top: 50px !important;">
-                    <img src="assets/images/barco.jpg" class="justify-content-center" style="border-radius: 10px;"
-                        alt="imagen Barco" [style]="{ width:'502px', height:'268px'}">
+                <div class="justify-content-center text-center">
+                        <img src="assets/images/barco.jpg" class="style-img-cotizacion"
+                        alt="imagen Barco" >
                 </div>
             </div>
-            <div class="col-12 md:col-6 ">
+            <div class="col-12 sm:col-7 md:col-7 lg:col-7" style="border: 2px solid red; text-align: left; justify-content: start;">
                 <app-formulario-cotizacion />
             </div>
 

@@ -1,63 +1,65 @@
-       <div class="card flex justify-content-center text-align" [style]="{ width:'800px !important' }">
-                    <p-card header="Cotización Comercial" class="title-style text-center border-card">
-                        <ng-template pTemplate="header">
-                        </ng-template>
-
+       <div class="card flex justify-content-center text-align"  style="max-width: 100%!important;">
+                    <p-card class="title-style text-center" >                       
+                        <div class="grid" >
+                            <div class="col style-title-form">
+                                Cotización Comercial
+                            </div>                           
+                        </div>
                         <div class="grid ">
                             <div class="col">
                                 <p-floatLabel class="w-full">
-                                    <input pInputText id="username" class="w-full input-border" [(ngModel)]="value" />
+                                    <input pInputText id="username" class="w-full input-border small-input" [(ngModel)]="value" />
                                     <label for="username">RUC</label>
                                 </p-floatLabel>
                             </div>
                             <div class="col">
                                 <p-floatLabel class="w-full">
-                                    <input pInputText id="username" class="w-full input-border" [(ngModel)]="value"
+                                    <input pInputText id="username" class="w-full input-border small-input" [(ngModel)]="value"
                                         [readOnly]="true" />
                                     <label for="username">Razón Social</label>
                                 </p-floatLabel>
                             </div>
                         </div>
-                        <div class="grid mt-2">
+                        <div class="grid">
                             <div class="col-12">
                                 <p-floatLabel class="w-full">
-                                    <input pInputText id="username3" class="w-full input-border" [(ngModel)]="value" />
+                                    <input pInputText id="username3" class="w-full input-border small-input" [(ngModel)]="value" />
                                     <label for="username3">Correo Corporativo</label>
                                 </p-floatLabel>
                             </div>
                         </div>
 
-                        <div class="text-style" style="text-align: start;">
+                        <div class="text-style style-indicador" >
                             De
                         </div>
                         <div class="grid mt-2">
                             <div class="col">
                                 <p-floatLabel class="w-full">
-                                    <input pInputText id="username" class="w-full input-border" [(ngModel)]="value" />
+                                    <input pInputText id="username" class="w-full input-border small-input" [(ngModel)]="value" />
                                     <label for="username">País</label>
                                 </p-floatLabel>
                             </div>
                             <div class="col">
                                 <p-floatLabel class="w-full">
-                                    <input pInputText id="username" class="w-full input-border" [(ngModel)]="value" />
+                                    <input pInputText id="username" class="w-full input-border small-input" [(ngModel)]="value" />
                                     <label for="username">Ciudad</label>
                                 </p-floatLabel>
                             </div>
                         </div>
 
-                        <div class="text-style" style="text-align: start;">
+                        <div class="text-style style-indicador" >
                             Para
                         </div>
                         <div class="grid mt-2">
                             <div class="col">
                                 <p-floatLabel class="w-full">
-                                    <input pInputText id="username" class="w-full input-border" [(ngModel)]="value" />
+                                    <input pInputText id="username" class="w-full input-border small-input" [(ngModel)]="value" />
                                     <label for="username">País</label>
                                 </p-floatLabel>
                             </div>
                             <div class="col">
                                 <p-floatLabel class="w-full">
-                                    <input pInputText id="username" class="w-full input-border" [(ngModel)]="value" />
+                                    <input pInputText id="username" class="w-full input-border small-input" [(ngModel)]="value" />
                                     <label for="username">Ciudad</label>
                                 </p-floatLabel>
                             </div>
@@ -85,21 +87,21 @@
                             <div class="grid mt-1">
                                 <div class="col-4">
                                     <p-floatLabel class="w-full">
-                                        <input pInputText type="number" id="price" class="w-full input-border"
+                                        <input pInputText type="number" id="price" class="w-full input-border small-input"
                                             [(ngModel)]="value" />
                                         <label for="price">Precio</label>
                                     </p-floatLabel>
                                 </div>
                                 <div class="col-4">
                                     <p-floatLabel class="w-full">
-                                        <input pInputText type="number" id="username" class="w-full input-border"
+                                        <input pInputText type="number" id="username" class="w-full input-border small-input"
                                             [(ngModel)]="value" />
                                         <label for="username">Número de bultos</label>
                                     </p-floatLabel>
                                 </div>
                                 <div class="col-4">
                                     <p-floatLabel class="w-full">
-                                        <input pInputText type="number" id="username" class="w-full input-border"
+                                        <input pInputText type="number" id="username" class="w-full input-border small-input"
                                             [(ngModel)]="value" />
                                         <label for="username">Peso total</label>
                                     </p-floatLabel>

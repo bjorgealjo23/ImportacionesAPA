@@ -8,17 +8,21 @@
 }
 
 .style-marco-cotizacion {
-    max-width: 75%;
+    max-width: 90%;
     margin: 0 auto;
 
-    @media (max-width: 768px) {
+    @media (max-width: 1023px) {
         max-width: 100%;
+    }
+
+    @media (min-width: 1044px) {
+        max-width: 85%;
     }
 }
 
 .text-style-title {
-    font-size: 60px;
-    font-weight: 800;
+    font-size: clamp(29px, 2.4vw + 16px, 50px);
+    font-weight: 900;
     color: $color-secondary;
 }
 
@@ -27,12 +31,22 @@
     padding-left: 0;
 
     li {
-        font-size: 25px;
+        font-size: clamp(16px, 0.25vw + 15px, 18px);
         margin-bottom: 16px;
+        font-weight: 700;
+        color: $color-secondary;
     }
 
     span {
-        font-size: 25px;
+        font-size: clamp(16px, 0.25vw + 15px, 18px);
         font-weight: bolder;
+        color: $color-secondary;
     }
+}
+
+
+.style-img-cotizacion {
+    width: clamp(70%, 1vw + 72%, 75%);
+    max-width: 100%;
+    border-radius: 10px !important;
 }
