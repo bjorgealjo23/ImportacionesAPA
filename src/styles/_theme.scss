@@ -18,10 +18,10 @@ li {
   text-align: left;
 }
 
+
 .border-card {
   border: 4px solid $color-secondary;
 }
-
 
 .btn {
   @include button-style($color-secondary, $color-primary, 110);
@@ -38,10 +38,6 @@ li {
 .text-style {
   @include text-style($font-size-base , $color-secondary);
 }
-
-// .text-style-title {
-//   @include text-style($font-size-title-large , $color-secondary);
-// }
 
 .text-style-subtitle {
   @include text-style-subtitle($font-size-subtitle-large , $color-secondary, $font-weight-bold);
