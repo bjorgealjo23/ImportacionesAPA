@@ -1,4 +1,4 @@
-<div class="card flex justify-content-start ml-5">
+<div class="card ">
     <p-card class="text-center">
         <div class="grid">
             <div class="col style-title-form">
@@ -6,13 +6,13 @@
             </div>
         </div>
         <div class="grid ">
-            <div class="col-12 sm:col-12 md:col-6">
+            <div class="col-12 sm:col-12 md:col-12 lg:col-6">
                 <p-floatLabel class="w-full">
                     <input pInputText id="username" class="w-full input-border small-input" [(ngModel)]="value" />
                     <label for="username">RUC</label>
                 </p-floatLabel>
             </div>
-            <div class="col-12 sm:col-12 md:col-6">
+            <div class="col-12 sm:col-12 md:col-12 lg:col-6">
                 <p-floatLabel class="w-full">
                     <input pInputText id="username" class="w-full input-border small-input" [(ngModel)]="value"
                         [readOnly]="true" />
@@ -21,7 +21,7 @@
             </div>
         </div>
         <div class="grid">
-            <div class="col-12 sm:col-12 md:col-6">
+            <div class="col-12 sm:col-12 md:col-12 lg:col-12">
                 <p-floatLabel class="w-full">
                     <input pInputText id="username3" class="w-full input-border small-input" [(ngModel)]="value" />
                     <label for="username3">Correo Corporativo</label>
@@ -33,13 +33,13 @@
             De
         </div>
         <div class="grid mt-2">
-            <div class="col">
+            <div class="col-12 sm:col-12 md:col-12 lg:col-6">
                 <p-floatLabel class="w-full">
                     <input pInputText id="username" class="w-full input-border small-input" [(ngModel)]="value" />
                     <label for="username">País</label>
                 </p-floatLabel>
             </div>
-            <div class="col">
+            <div class="col-12 sm:col-12 md:col-12 lg:col-6">
                 <p-floatLabel class="w-full">
                     <input pInputText id="username" class="w-full input-border small-input" [(ngModel)]="value" />
                     <label for="username">Ciudad</label>
@@ -51,13 +51,13 @@
             Para
         </div>
         <div class="grid mt-2">
-            <div class="col">
+            <div class="col-12 sm:col-12 md:col-12 lg:col-6">
                 <p-floatLabel class="w-full">
                     <input pInputText id="username" class="w-full input-border small-input" [(ngModel)]="value" />
                     <label for="username">País</label>
                 </p-floatLabel>
             </div>
-            <div class="col">
+            <div class="col-12 sm:col-12 md:col-12 lg:col-6">
                 <p-floatLabel class="w-full">
                     <input pInputText id="username" class="w-full input-border small-input" [(ngModel)]="value" />
                     <label for="username">Ciudad</label>
@@ -123,10 +123,12 @@
         </div>
 
         <div class="price-banner mt-2">
-            <div class="label" style="font-size: 25px;">
-                <span class="ml-5">Precio desde</span>
+            <div class="label">
+                <span>Precio desde</span>
             </div>
-            <div class="price">PEN <strong>&nbsp; 1254.48</strong></div>
+            <div class="price">
+                PEN <strong>&nbsp; 1254.48</strong>
+            </div>
         </div>
         <div class="mt-4 text-center">
             <button class="btn">Contactarme Ahora</button>
