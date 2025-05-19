@@ -1,6 +1,56 @@
 @use './../../../../../styles/variables' as *;
 
+.style-title-login {
+    font-size: clamp(25px, 2.22vw + 8px, 42px);
+    font-weight: 800;
+    text-align: center;
+    color: $color-secondary;
+    font-family: $font-base !important;
+    margin-top: clamp(5%, 4.2vw + 1%, 25%);
+}
 
 
+.style-marco-login-form {
+    display: grid;
+    place-items: center;
+    height: 100%;
+    margin: auto;
 
+    @media (max-width: 1023px) {
+        width: 100%;
+    }
 
+    @media (min-width: 767px) {
+        width: 75%;
+    }
+}
+
+.style-icon-mostrar-pass {
+    position: absolute;
+    top: 50%;
+    right: 0.75rem;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: $color-secondary;
+}
+
+.style-text-complementario {
+    font-size: clamp(14px, 0.5rem, 18px);
+    color: $color-secondary !important;
+}
+
+.style-button-registro {
+    cursor: pointer;
+    text-decoration: none;
+    color: $color-secondary;
+    font-weight: 700;
+}
+
+.style-olvidaste-pass {
+     cursor: pointer;
+    // text-decoration: none;
+    color: $color-secondary;
+    font-weight: 700;
+}

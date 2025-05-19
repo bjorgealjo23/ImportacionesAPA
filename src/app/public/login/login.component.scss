@@ -24,6 +24,16 @@
     .style-col-form {
         border-radius: 10px 0 0 10px !important;
         background: $color-third;
+
+        @media (max-width: 767px) {
+              border-radius: 10px 10px 0 10px !important;
+        }
+
+
     }
 
+}
+
+.style-img {
+    width: 80% !important;
 }
