@@ -1,3 +1,36 @@
-<p>home works!</p>
-<button class="btn">Prueba</button>
+<div class="video-hero-banner">
+  <ng-container *ngIf="!videoFailed; else fallbackTpl">
+    <video
+      #heroVideo
+      muted
+      loop
+      playsinline
+      [hidden]="isLoading"
+      [class.loaded]="!isLoading"
+      [src]="videoSrc"
+    ></video>
 
+    <div *ngIf="isLoading" class="loader">
+      <div class="spinner"></div>
+      <p>Cargando video...</p>
+    </div>
+  </ng-container>
+
+  <ng-template #fallbackTpl>
+    <img
+      [src]="fallbackImage"
+      alt="Imagen de fondo de barcos"
+      class="fallback-image"
+    />
+    <button class="retry-video-btn" (click)="playVideoManually()">
+      ▶ Reproducir Video
+    </button>
+  </ng-template>
+
+  <div class="overlay-content">
+    <div class="overlay-text">
+      <h1>Rastrea tu carga en tiempo real, estés donde estés.</h1>
+      <button class="btn-large">Contacte ahora</button>
+    </div>
+  </div>
+</div>

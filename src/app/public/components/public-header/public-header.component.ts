@@ -16,7 +16,7 @@ export class PublicHeaderComponent {
   isMenuOpen:boolean = false;
 
   items = [
-    { label: 'Inicio', routerLink: '/' },
+    { label: 'Inicio', routerLink: '/home' },
     { label: 'Cotización', routerLink: '/cotizacion' },
     { label: 'Sobre Nosotros', routerLink: '/nosotros' },
     // { label: 'Contáctanos', routerLink: '/contactanos' }
