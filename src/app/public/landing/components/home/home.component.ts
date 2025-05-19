@@ -25,6 +25,7 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   private maxRetries = 3;
 
   videoSrc = 'assets/videos/barcos.mp4';
+  // videoSrc = 'assets/videos/barcosss.mp4';
   fallbackImage =
     'https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=1920&q=80';
 

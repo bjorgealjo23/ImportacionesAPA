@@ -1,0 +1,29 @@
+@use './../../../styles/variables' as *;
+
+.style-container-inicioSe {
+    background: $color-secondary !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    height: 100vh;
+
+    .style-container-login {
+        width: 100%;
+    }
+
+    .style-marco-login {
+        max-width: 85%;
+        margin: auto;
+    }
+
+    .style-grid-inicio {
+        background: $color-primary;
+        border-radius: 10px !important;
+        margin-top: 5% !important;
+    }
+
+    .style-col-form {
+        border-radius: 10px 0 0 10px !important;
+        background: $color-third;
+    }
+
+}

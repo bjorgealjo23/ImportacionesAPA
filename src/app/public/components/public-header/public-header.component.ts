@@ -26,5 +26,9 @@ export class PublicHeaderComponent {
     console.log(`si se precioan`)
   }
 
+  irInicioSesion(){
+    console.log(`si se precioan`)
+  }
+
 
 }

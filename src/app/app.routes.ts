@@ -1,6 +1,8 @@
 import { Routes } from '@angular/router';
 import { LandingComponent } from './public/landing/landing.component';
 import { HomeComponent, CotizacionComponent, NosotrosComponent, ContactanosComponent } from './public/landing/components'
+import { InicioComponent, RecuperacionComponent, RegistroComponent } from './public/login/components';
+import { LoginComponent } from './public/login/login.component';
 
 export const routes: Routes = [
     {
@@ -12,5 +14,12 @@ export const routes: Routes = [
             { path: 'contactanos', component: ContactanosComponent },
         ]
     },
+    {
+        path: 'acceso', component: LoginComponent,
+        children: [
+            { path: 'inicio', component: InicioComponent },
+            { path: 'registro', component: RegistroComponent },
+            { path: 'recuperacion', component: RecuperacionComponent },
+        ]
+    }
 ];
-    
