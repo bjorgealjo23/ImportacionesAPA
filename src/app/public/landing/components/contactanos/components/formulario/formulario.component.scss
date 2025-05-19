@@ -7,10 +7,19 @@
 }
 
 :host ::ng-deep .form-wrapper {
-  width: 100%;   
-  max-width: 750px;      
-  margin-inline: auto;   
-  padding: 1rem;       
+  width: 100%;
+  max-width: 750px;
+  margin-inline: auto;
+  padding: 1rem;
+}
+
+::ng-deep .p-card {
+  background-color: $color-primary;
+  border-radius: 50px;
+  padding: 2%;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 4px 12px rgba(6, 49, 99, 0.3);
 }
 
 

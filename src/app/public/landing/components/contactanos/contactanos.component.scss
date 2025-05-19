@@ -14,24 +14,24 @@
     }
 }
 
-// -- para los clamps
-
 .style-titulo-contactanos {
-    font-size: clamp(24px, 2.5vw, 40px);
-    font-weight: 800;
+
+    font-size: clamp(40px, 4vw, 50px);
+    font-weight: 900;
     margin-bottom: clamp(10px, 1vw, 15px);
     color: $color-secondary;
 }
 
 .style-texto-contactanos {
-    font-size: clamp(14px, 1vw, 20px);
+    font-size: clamp(16px, 0.25vw + 15px, 18px);
     line-height: 1.6;
     margin-bottom: clamp(10px, 1vw, 15px);
+    color: $color-secondary;
 }
 
 .imagen-contactanos {
-    width: 100%;
-    max-width: 400px;
+    width: clamp(70%, 1vw + 72%, 75%);
+    max-width: 100%;
     height: auto;
     border-radius: 10px;
 }

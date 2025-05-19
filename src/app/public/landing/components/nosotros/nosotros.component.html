@@ -1,61 +1,50 @@
 <section class="style-section-nostros">
-    <div class="style-marco-nosotros">
-        <div class="grid">
-            <div class="col-12 sm:col-12 md:col-7">
-                <div class="card">
-                    <app-carousel [lstImagenes]="images" />
-                </div>
-            </div>
-
-            <div class="col-12 sm:col-12 md:col-5 flex justify-content-center">
-                <div class="container text-center">
-                    <p class="text-subtitulo-nosotros text-center">Sobre nosotros</p>
-                    <p class="style-text-description text-left">
-                        Somos una empresa dedicada al transporte marítimo y de cabotaje, ofreciendo soluciones
-                        logísticas confiables y eficientes para el traslado de carga entre puertos nacionales e
-                        internacionales.
-                        Nuestro compromiso es garantizar la seguridad, puntualidad y trazabilidad de cada envío,
-                        adaptándonos a
-                        las necesidades del comercio marítimo actual.
-                    </p>
-                    <button class="btn-large">Contactarme Ahora</button>
-                </div>
-            </div>
+  <div class="style-marco-nosotros">
+    <div class="grid">
+      <div class="col-12 sm:col-12 md:col-7">
+        <div class="card">
+          <app-carousel [lstImagenes]="images" />
         </div>
+      </div>
 
-        <div class="grid">
-            <div class="col-12">
-                <div class="text-subtitulo-nosotros text-center">¿Por qué elegirnos para tus importaciones ?</div>
-            </div>
-            <div class="col-12">
-                <div class="style-text-description text-center mt-1"> La confianza de nuestros clientes es nuestra
-                    prioridad. Por eso, ofrecemos un
-                    servicio
-                    personalizado, atención dedicada y un compromiso firme con tu satisfacción en cada etapa del
-                    proceso.</div>
-            </div>
+      <div class="col-12 sm:col-12 md:col-5 flex justify-content-center">
+        <div class="container text-center">
+          <p class="text-subtitulo-nosotros text-center">Sobre nosotros</p>
+          <p class="style-text-description text-left">
+            Somos una empresa dedicada al transporte marítimo y de cabotaje,
+            ofreciendo soluciones logísticas confiables y eficientes para el
+            traslado de carga entre puertos nacionales e internacionales.
+            Nuestro compromiso es garantizar la seguridad, puntualidad y
+            trazabilidad de cada envío, adaptándonos a las necesidades del
+            comercio marítimo actual.
+          </p>
+          <button class="btn-large">Contactarme Ahora</button>
         </div>
-
-        <div class="mt-2 mb-5 flex justify-content-center">
-            <div class="grid justify-content-center">
-                <div class="col-12 sm:col-6 md:col-6 lg:col-3">
-                    <app-card [newItem]="pro1" />
-                </div>
-                <div class="col-12 sm:col-6 md:col-6 lg:col-3">
-                    <app-card [newItem]="pro2" />
-                </div>
-                <div class="col-12 sm:col-6 md:col-6 lg:col-3">
-                    <app-card [newItem]="pro3" />
-                </div>
-                <div class="col-12 sm:col-6 md:col-6 lg:col-3">
-                    <app-card [newItem]="pro4" />
-                </div>
-            </div>
-        </div>
-
-
-
+      </div>
     </div>
 
+    <div class="grid">
+      <div class="col-12">
+        <div class="text-subtitulo-nosotros text-center">
+          ¿Por qué elegirnos para tus importaciones ?
+        </div>
+      </div>
+      <div class="col-12">
+        <p class="style-text-description text-center mt-1">
+          La confianza de nuestros clientes es nuestra prioridad. Por eso,
+          ofrecemos un servicio personalizado, atención dedicada y un compromiso
+          firme con tu satisfacción en cada etapa del proceso.
+        </p>
+      </div>
+    </div>
 
+    <div class="mt-2 mb-5 flex justify-content-center">
+      <div class="flex flex-wrap gap-3 justify-content-center">
+        <app-card [newItem]="pro1" />
+        <app-card [newItem]="pro2" />
+        <app-card [newItem]="pro3" />
+        <app-card [newItem]="pro4" />
+      </div>
+    </div>
+  </div>
 </section>

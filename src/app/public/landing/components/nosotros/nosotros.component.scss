@@ -30,6 +30,8 @@
 }
 
 .style-text-description {
-    font-size: clamp(14px, 2vw, 18px) !important;
+    // font-size: clamp(14px, 2vw, 18px) !important;
+    font-size: clamp(16px, 0.25vw + 15px, 18px);
     color: $color-secondary !important;
+    line-height: 1.6 !important;
 }
