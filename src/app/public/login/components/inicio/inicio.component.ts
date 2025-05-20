@@ -6,19 +6,28 @@ import { ButtonModule } from 'primeng/button';
 import { CommonModule } from '@angular/common';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { CheckboxModule } from 'primeng/checkbox';
 
 @Component({
   selector: 'app-inicio',
   standalone: true,
-  imports: [InputTextModule,InputNumberModule,FloatLabelModule,ButtonModule,CommonModule,InputTextareaModule, CommonModule, FormsModule,RouterModule,CheckboxModule],
+  imports: [InputTextModule,InputNumberModule,FloatLabelModule,ButtonModule,CommonModule,InputTextareaModule, CommonModule,
+     FormsModule,RouterModule,CheckboxModule],
   templateUrl: './inicio.component.html',
   styleUrl: './inicio.component.scss'
 })
 export class InicioComponent {
 
+  constructor(private router: Router){}
+
   value:any;
   verPassword:boolean = false;
   checked:any;
+
+  iniciarSesion(){
+    this.router.navigate(['/admin/bienvenido'])
+  }
+
+
 }

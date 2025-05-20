@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard-header',
@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './dashboard-header.component.scss'
 })
 export class DashboardHeaderComponent {
-
+  @Output() toggleSidebar = new EventEmitter<void>();
 }

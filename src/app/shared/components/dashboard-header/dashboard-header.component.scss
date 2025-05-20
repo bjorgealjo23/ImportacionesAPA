@@ -1,0 +1,7 @@
+@use './../../../../styles/variables' as *;
+
+.style-navbar-dash {
+    background: $color-primary;
+    color: $color-secondary;
+    height: 6vh;
+}

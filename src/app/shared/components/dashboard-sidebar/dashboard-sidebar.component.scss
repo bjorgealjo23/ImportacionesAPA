@@ -1,0 +1,8 @@
+@use './../../../../styles/variables' as *;
+
+.style-sidebar-dash {
+    border: 2px solid $color-secondary;
+    background: $color-secondary;
+    color: $color-primary;
+    height: 100vh;
+}

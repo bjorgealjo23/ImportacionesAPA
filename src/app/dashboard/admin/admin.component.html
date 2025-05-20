@@ -1,0 +1,13 @@
+<div class="flex h-screen">
+  <div class="hidden lg:block lg:w-20rem">
+    <app-dashboard-sidebar></app-dashboard-sidebar>
+  </div>
+  <div class="flex flex-column flex-1">
+    <app-dashboard-header (toggleSidebar)="changeVisibilidad()"></app-dashboard-header>
+    <div class="flex-1 overflow-auto">
+      <router-outlet></router-outlet>
+    </div>
+    <app-dashboard-footer></app-dashboard-footer>
+  </div>
+</div>
+

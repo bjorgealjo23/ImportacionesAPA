@@ -1,0 +1,7 @@
+@use './../../../../styles/variables' as *;
+
+.container-footer-dash {
+    background: $color-primary;
+    color: $color-secondary;
+    height: 5vh;
+}
