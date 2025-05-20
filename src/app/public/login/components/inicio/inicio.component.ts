@@ -7,11 +7,12 @@ import { CommonModule } from '@angular/common';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { CheckboxModule } from 'primeng/checkbox';
 
 @Component({
   selector: 'app-inicio',
   standalone: true,
-  imports: [InputTextModule,InputNumberModule,FloatLabelModule,ButtonModule,CommonModule,InputTextareaModule, CommonModule, FormsModule,RouterModule],
+  imports: [InputTextModule,InputNumberModule,FloatLabelModule,ButtonModule,CommonModule,InputTextareaModule, CommonModule, FormsModule,RouterModule,CheckboxModule],
   templateUrl: './inicio.component.html',
   styleUrl: './inicio.component.scss'
 })
@@ -19,4 +20,5 @@ export class InicioComponent {
 
   value:any;
   verPassword:boolean = false;
+  checked:any;
 }

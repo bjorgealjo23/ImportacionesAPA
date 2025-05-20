@@ -3,6 +3,7 @@ import { MenubarModule } from 'primeng/menubar';
 import { BadgeModule } from 'primeng/badge';
 import { AvatarModule } from 'primeng/avatar';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-public-header',
@@ -14,6 +15,8 @@ import { CommonModule } from '@angular/common';
 export class PublicHeaderComponent {
 
   isMenuOpen:boolean = false;
+
+  constructor(private router:Router){}
 
   items = [
     { label: 'Inicio', routerLink: '/home' },
@@ -27,7 +30,7 @@ export class PublicHeaderComponent {
   }
 
   irInicioSesion(){
-    console.log(`si se precioan`)
+    this.router.navigate(['/acceso/inicio'])
   }
 
 

@@ -1,65 +1,66 @@
-<div class="style-section-contac-form">
-    <div class="style-marco-register-form">
-        <div class="card justify-content-center text-align ">
+<div class="style-marco-form">
+    <div class="card justify-content-center text-align ">
 
-            <div class="grid">
-                <div class="col-12">
-                    <div class="style-title-register">Crear Cuenta</div>
+        <div class="grid">
+            <div class="col-12">
+                <div class="style-title-generic">Crear Cuenta</div>
+            </div>
+        </div>
+        <div class="grid">
+            <div class="col-12 ">
+                <p-floatLabel class="w-full">
+                    <input pInputText id="username" class="w-full input-border" [(ngModel)]="value" />
+                    <label for="username">Nombres</label>
+                </p-floatLabel>
+            </div>
+            <div class="col-12 ">
+                <p-floatLabel class="w-full">
+                    <input pInputText id="username" class="w-full input-border" [(ngModel)]="value" />
+                    <label for="username">RUC</label>
+                </p-floatLabel>
+            </div>
+            <div class="col-12 ">
+                <p-floatLabel class="w-full">
+                    <input pInputText id="username" class="w-full input-border" [(ngModel)]="value" />
+                    <label for="username">Correo Corporativo</label>
+                </p-floatLabel>
+            </div>
+            <div class="col-12 mt-2">
+                <p-floatLabel class="w-full">
+                    <input pInputText [type]="verPassword ? 'text': 'password'" id="username"
+                        class="w-full input-border" [(ngModel)]="value" />
+                    <label for="username">Contraseña</label>
+                    <button type="button" (click)="verPassword = !verPassword" class="style-icon-mostrar-pass">
+                        <i [class]="!verPassword ? 'pi pi-eye-slash' : 'pi pi-eye'"></i> <span class="ml-1">{{
+                            !verPassword ? 'mostrar' : 'ocultar'}}</span>
+
+                    </button>
+                </p-floatLabel>
+            </div>
+            <div class="col-12 mt-2">
+                <p-floatLabel class="w-full">
+                    <input pInputText [type]="verPassword ? 'text': 'password'" id="username"
+                        class="w-full input-border" [(ngModel)]="value" />
+                    <label for="username">Confirmar Contraseña</label>
+                    <button type="button" (click)="verPassword = !verPassword" class="style-icon-mostrar-pass">
+                        <i [class]="!verPassword ? 'pi pi-eye-slash' : 'pi pi-eye'"></i> <span class="ml-1">{{
+                            !verPassword ? 'mostrar' : 'ocultar'}}</span>
+
+                    </button>
+                </p-floatLabel>
+            </div>
+        </div>
+        <div class="grid">
+            <div class="col-12">
+                <div class="mt-3 text-center">
+                    <button class="btn-large"><i class="fas fa-sign-in-alt mr-1"></i> Registrarme</button>
                 </div>
             </div>
-            <div class="grid">
-                <div class="col-12 ">
-                    <p-floatLabel class="w-full">
-                        <input pInputText id="username" class="w-full input-border" [(ngModel)]="value" />
-                        <label for="username">Nombres</label>
-                    </p-floatLabel>
-                </div>
-                 <div class="col-12 ">
-                    <p-floatLabel class="w-full">
-                        <input pInputText id="username" class="w-full input-border" [(ngModel)]="value" />
-                        <label for="username">RUC</label>
-                    </p-floatLabel>
-                </div>
-                 <div class="col-12 ">
-                    <p-floatLabel class="w-full">
-                        <input pInputText id="username" class="w-full input-border" [(ngModel)]="value" />
-                        <label for="username">Correo Corporativo</label>
-                    </p-floatLabel>
-                </div>
-                <div class="col-12 mt-2">
-                    <p-floatLabel class="w-full">
-                        <input pInputText [type]="verPassword ? 'text': 'password'" id="username" class="w-full input-border"
-                            [(ngModel)]="value" />
-                        <label for="username">Contraseña</label>
-                        <button type="button" (click)="verPassword = !verPassword" class="style-icon-mostrar-pass">
-                            <i [class]="!verPassword ? 'pi pi-eye-slash' : 'pi pi-eye'"></i> <span class="ml-1">{{ !verPassword ? 'mostrar' : 'ocultar'}}</span>
-                             
-                        </button>
-                    </p-floatLabel>
-                </div>
-                <div class="col-12 mt-2">
-                    <p-floatLabel class="w-full">
-                        <input pInputText [type]="verPassword ? 'text': 'password'" id="username" class="w-full input-border"
-                            [(ngModel)]="value" />
-                        <label for="username">Confirmar Contraseña</label>
-                        <button type="button" (click)="verPassword = !verPassword" class="style-icon-mostrar-pass">
-                            <i [class]="!verPassword ? 'pi pi-eye-slash' : 'pi pi-eye'"></i> <span class="ml-1">{{ !verPassword ? 'mostrar' : 'ocultar'}}</span>
-                             
-                        </button>
-                    </p-floatLabel>
-                </div>
-            </div>
-            <div class="grid">
-                <div class="col-12">
-                    <div class="mt-3 text-center">
-                        <button class="btn-large"><i class="fas fa-sign-in-alt mr-1"></i> Registrarme</button>
-                    </div>
-                </div>
-            </div>
-            <div class="grid">
-                <div class="col-12 text-center">
-                    <div class="style-text-complementario">Ya tienes una cuenta? <b> <a [routerLink]="['/acceso', 'inicio']" class="style-button-inicio">Iniciar Sesión</a></b></div>
-                </div>
+        </div>
+        <div class="grid">
+            <div class="col-12 text-center">
+                <div class="style-text-complementario">Ya tienes una cuenta? <b> <a [routerLink]="['/acceso', 'inicio']"
+                            class="style-button-generic">Iniciar Sesión</a></b></div>
             </div>
         </div>
     </div>
