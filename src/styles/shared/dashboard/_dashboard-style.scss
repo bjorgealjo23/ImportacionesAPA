@@ -10,13 +10,18 @@
     }
 }
 
-.card-container {
-    width: 100%;
+.card-container-full {
+    max-width: 100%;
     margin: auto;
-    padding: 25px;
     background: $color-primary;
     border-radius: 10px;
 
+}
+
+.style-marco-trabajo {
+    width: 90% !important;
+    margin: auto;
+    
 }
 
 

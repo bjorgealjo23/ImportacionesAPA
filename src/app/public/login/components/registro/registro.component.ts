@@ -11,7 +11,7 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 @Component({
   selector: 'app-registro',
   standalone: true,
-  imports: [InputTextModule,InputNumberModule,FloatLabelModule,ButtonModule,CommonModule,InputTextareaModule, CommonModule, FormsModule,RouterModule],
+  imports: [InputTextModule,InputNumberModule,FloatLabelModule,ButtonModule,CommonModule,InputTextareaModule, FormsModule,RouterModule],
   templateUrl: './registro.component.html',
   styleUrl: './registro.component.scss'
 })

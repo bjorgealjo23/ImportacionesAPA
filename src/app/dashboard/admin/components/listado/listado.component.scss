@@ -22,3 +22,25 @@
     }
 }
 
+::ng-deep .p-calendar input {
+    width: 100% !important;
+}
+
+::ng-deep .p-float {
+    width: 100%;
+}
+
+.container-table {
+    // width: 370px !important; //movil
+    width: 100% !important;
+    overflow-x: auto;
+    border: 2px solid red;
+    margin-top: 2%;
+    box-sizing: border-box;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    width: 100% !important;
+    border: 2px solid blue;
+}

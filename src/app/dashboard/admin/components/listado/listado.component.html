@@ -1,36 +1,126 @@
 <div class="style-marco-admin">
     <div class="grid style-title-card">
         <div class="col-12">
-            Importaciones
+            <i class="fas fa-ship mr-1"></i>Importaciones
         </div>
     </div>
     <div class="grid mt-3">
-        <div class="card-container">
+        <div class="card-container-full">
 
-            <div class="grid">
-                <div class="col-12 sm:col-12 md:col-6 lg:col-6 style-subtitle-generic">
-                   <i class="fas fa-list mr-1 "></i> Listado de Importaciones
+            <div class="style-marco-trabajo mt-4">
+                <div class="grid">
+                    <div class="col-12 sm:col-12 md:col-6 lg:col-6 style-subtitle-generic">
+                        Listado de Importaciones
+                    </div>
+                    <div class="col-12 sm:col-12 md:col-6 lg:col-6 style-subtitle-generic sm:text-left md:text-right">
+                        📦 Importaciones Sol de Laredo SAC
+                    </div>
+
+
+                    <div class="col-12 sm:col-6 md:col-3 lg:col-3">
+                        <div class="card w-full">
+                            <p-floatLabel class="w-full">
+                                <p-calendar [(ngModel)]="date2" inputId="fechaInicio"
+                                    [style]="{width: '100%'}"></p-calendar>
+                                <label for="fechaInicio">Fecha inicio</label>
+                            </p-floatLabel>
+                        </div>
+                    </div>
+
+                    <div class="col-12 sm:col-6 md:col-3 lg:col-3">
+                        <div class="card w-full">
+                            <p-floatLabel class="w-full">
+                                <p-calendar [(ngModel)]="date2" inputId="fechaFin"
+                                    [style]="{width: '100%'}"></p-calendar>
+                                <label for="fechaFin">Fecha final</label>
+                            </p-floatLabel>
+                        </div>
+                    </div>
+                    <div class="col-12 sm:col-6 mb-2 md:col-3 lg:col-3">
+                        <p-floatLabel class="w-full">
+                            <input pInputText type="text" id="username" class="w-full input-border"
+                                [(ngModel)]="value" />
+                            <label for="username">Proveedor</label>
+                        </p-floatLabel>
+                    </div>
+                    <div class="col-12 sm:col-6 md:col-3 lg:col-3">
+                        <p-floatLabel class="w-full">
+                            <input pInputText type="text" id="username" class="w-full input-border"
+                                [(ngModel)]="value" />
+                            <label for="username">Código o ID</label>
+                        </p-floatLabel>
+                    </div>
                 </div>
-                 <div class="col-12 sm:col-12 md:col-6 lg:col-6 style-subtitle-generic"  style="border: 2px solid red; text-align: end;">
-                    Importaciones Sol de Laredo SAC
+                <div class="grid mt-2">
+                    <div class="col-12">
+                        <button class="btn-large"><i class="fas fa-search mr-1"></i> Buscar</button>
+                    </div>
+                </div>
+                <!-- --- Para mi tablita  -->
+                <div class="container-table">
+                    <div class="mb-3 mt-4">
+                        <p-button type="button" icon="pi pi-chevron-left" (onClick)="prev()" [disabled]="isFirstPage()"
+                            styleClass="p-button-text" />
+                        <p-button type="button" icon="pi pi-refresh" (onClick)="reset()" styleClass="p-button-text" />
+                        <p-button type="button" icon="pi pi-chevron-right" (onClick)="next()" [disabled]="isLastPage()"
+                            styleClass="p-button-text" />
+                    </div>
+                    <div class="table-wrapper">
+                        <p-table [value]="customers" [paginator]="true" [rows]="5" [first]="first"
+                            [showCurrentPageReport]="true"
+                            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+                            (onPage)="pageChange($event)" [rowsPerPageOptions]="[5,10, 25, 50]"
+                            [responsiveLayout]="'scroll'" [style]="{ maxWidth: '768px'}">
+
+                            <!-- 380px movil, 768 tablet -->
+                            <ng-template pTemplate="header">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Country</th>
+                                    <th>Company</th>
+                                    <th>Representative</th>
+                                    <th>Representative</th>
+                                    <th>Representative</th>
+                                    <th>Representative</th>
+                                    <th>Representative</th>
+                                    <th>Representative</th>
+                                    <th>Representative</th>
+                                    <th>Representative</th>
+                                    <th>Representative</th>
+                                    <th>Representative</th>
+                                    <th>Representative</th>
+                                    <th>Representative</th>
+                                    <th>Representative</th>
+                                    <th>Representative</th>
+                                </tr>
+                            </ng-template>
+                            <ng-template pTemplate="body" let-customer>
+                                <tr>
+                                    <td>{{ customer.name }}</td>
+                                    <td>{{ customer.country.name }}</td>
+                                    <td>{{ customer.company }}</td>
+                                    <td>{{ customer.representative.name }}</td>
+                                    <td>{{ customer.representative.name }}</td>
+                                    <td>{{ customer.representative.name }}</td>
+                                    <td>{{ customer.representative.name }}</td>
+                                    <td>{{ customer.representative.name }}</td>
+                                    <td>{{ customer.representative.name }}</td>
+                                    <td>{{ customer.representative.name }}</td>
+                                    <td>{{ customer.representative.name }}</td>
+                                    <td>{{ customer.representative.name }}</td>
+                                    <td>{{ customer.representative.name }}</td>
+                                    <td>{{ customer.representative.name }}</td>
+                                    <td>{{ customer.representative.name }}</td>
+                                    <td>{{ customer.representative.name }}</td>
+                                    <td>{{ customer.representative.name }}</td>
+                                </tr>
+                            </ng-template>
+                        </p-table>
+                    </div>
                 </div>
             </div>
 
 
-           
-            <div class="grid mt-4">
-                <div class="col-12 style-title-generic" >
-                   🖐 Bienvenido Jorge B 
-                </div>
-            </div>
-            <div class="grid mt-3">
-                <div class="col-12 ">
-                    <div class="style-subtitle-generic">🧭 ¿Primera vez aquí?</div>
-                    <div class="text-left description-generic mt-1 mb-1">Explora el panel principal para ver tus importaciones activas o usa el buscador para rastrear
-                        directamente.</div>
-                    <div class="style-subtitle-generic">📞 ¿Necesitas ayuda? Recuerda escribirnos a nuestros canales de ayuda.</div>
-                </div>
-            </div>
         </div>
     </div>
 </div>
