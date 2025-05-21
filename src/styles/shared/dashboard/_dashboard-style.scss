@@ -1,1 +1,51 @@
 @use './../../variables' as *;
+
+.style-marco-admin {
+    max-width: 92%;
+    margin: auto;
+    margin-bottom: 5%;
+
+    @media (max-width: 1023px) {
+        max-width: 95%;
+    }
+}
+
+.card-container {
+    width: 100%;
+    margin: auto;
+    padding: 25px;
+    background: $color-primary;
+    border-radius: 10px;
+
+}
+
+
+.style-title-card {
+    margin-top: 3%;
+    font-size: 25px;
+    font-weight: 600;
+    color: $color-secondary;
+
+    @media (min-width: 1023px) {
+        margin-top: 1%;
+    }
+}
+
+
+.style-title-generic {
+    font-size: 19px;
+    font-weight: 600;
+    color: $color-secondary;
+}
+
+.style-subtitle-generic {
+    font-size: 17px;
+    font-weight: 600;
+    color: $color-secondary;
+}
+
+.description-generic {
+    font-size: 14px !important;
+    font-weight: 500;
+    color: $color-secondary;
+}
