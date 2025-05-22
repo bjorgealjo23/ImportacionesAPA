@@ -4,12 +4,14 @@
     background: $color-primary;
     color: $color-secondary;
     height: 5vh;
-    min-height: 3rem;
+    // min-height: 3rem;
+    position: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0 1rem;
     margin-top: auto;
+
 
     div {
         text-align: center;

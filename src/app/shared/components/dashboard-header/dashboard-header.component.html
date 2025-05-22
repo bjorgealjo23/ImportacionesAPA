@@ -1,18 +1,18 @@
-<!-- dashboard-header.component.html -->
-<nav class="style-navbar-dash">
-    <div class="container-nav">
+<nav class="style-navbar-dash" [ngStyle]="{width: sidebarVisible ? 'calc(100vw - 20rem)' : '100vw'}">
+    <div class="container-nav" style="border: 2px solid red;"  >
         <div>
-            <!-- Botón que siempre está visible -->
-            <button
-                class="btn-toggle-sidebar"
-                (click)="onToggleSidebar()"
+            <button class="btn-toggle-sidebar" (click)="onToggleSidebar()"
                 [attr.aria-label]="sidebarVisible ? 'Ocultar sidebar' : 'Mostrar sidebar'">
                 <i *ngIf="!sidebarVisible" class="fas fa-angle-double-right"></i>
                 <i *ngIf="sidebarVisible" class="fas fa-angle-double-left"></i>
             </button>
         </div>
-        <div class="nav-title">
-            Canal de atención
+        <div class="nav-title" style="text-align: start;">
+            <i class="fas fa-phone-alt mr-1"></i> Canal de atención
         </div>
+        <div>
+            <i class="fas fa-user-circle mr-1"></i> Jorge Benites
+        </div>
+
     </div>
 </nav>

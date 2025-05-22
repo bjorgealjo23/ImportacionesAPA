@@ -117,19 +117,6 @@ export class ListadoComponent implements OnInit, OnDestroy {
     };
   }
 
-  // Métodos de paginación existentes
-  next() {
-    this.first = this.first + this.rows;
-  }
-
-  prev() {
-    this.first = this.first - this.rows;
-  }
-
-  reset() {
-    this.first = 0;
-  }
-
   pageChange(event: any) {
     this.first = event.first;
     this.rows = event.rows;
@@ -151,7 +138,19 @@ export class ListadoComponent implements OnInit, OnDestroy {
 
   deleteCustomer(customer: any) {
     console.log('Eliminando:', customer);
-    // Implementa tu lógica de eliminación aquí
-    // Ejemplo: this.customers = this.customers.filter(c => c.id !== customer.id);
   }
+
+
+  showMapa(numero:string) {
+    alert(numero)
+  }
+
+  showDetail(id:string) {
+    alert(id)
+  }
+
+
+
+
+
 }

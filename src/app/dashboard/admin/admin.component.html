@@ -12,13 +12,14 @@
   <div class="flex flex-column flex-1 transition-all duration-300 ease-in-out min-h-screen">
     <app-dashboard-header
       (toggleSidebar)="changeVisibilidad()"
-      [sidebarVisible]="sidebarVisible">
+      [sidebarVisible]="sidebarVisible"
+      >
     </app-dashboard-header>
 
-    <div class="flex-1 overflow-auto">
+    <div class="main-content">
       <router-outlet></router-outlet>
     </div>
-
-    <app-dashboard-footer class="mt-auto"></app-dashboard-footer>
   </div>
-</div>
+</div> 
+
+

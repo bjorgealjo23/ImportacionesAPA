@@ -1,0 +1,8 @@
+@use './../../../styles/variables' as *;
+
+.main-content {
+    padding-top: 6vh;
+    //   height: calc(100vh - 6vh); 
+    height: 100vh;
+    overflow-y: auto;
+}
