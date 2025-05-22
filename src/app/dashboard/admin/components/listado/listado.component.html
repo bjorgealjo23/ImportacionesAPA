@@ -64,18 +64,14 @@
                             <p-table [value]="customers" [paginator]="true" [rows]="5" [first]="first"
                                 [showCurrentPageReport]="true"
                                 currentPageReportTemplate="Mostrando {first} al {last} de {totalRecords} registros"
-                                (onPage)="pageChange($event)" 
-                                [rowsPerPageOptions]="[5,10, 25, 50]"
-                                styleClass="custom-paginator"
-                                [scrollable]="true" 
-                                scrollHeight="420px"                                                            
-                                >
+                                (onPage)="pageChange($event)" [rowsPerPageOptions]="[5,10, 25, 50]"
+                                styleClass="custom-paginator" [scrollable]="true" scrollHeight="420px">
                                 <ng-template pTemplate="header">
                                     <tr>
                                         <th style="width:120px">Fecha</th>
                                         <th style="width:120px">ID</th>
                                         <th style="width:200px">Proveedor</th>
-                                        <th style="width:120px">Estado</th>
+                                        <th style="width:250px">Estado</th>
                                         <th style="width:120px">ETA</th>
                                         <th style="width:120px">Puerto</th>
                                         <th style="width:120px">Contenedor</th>
@@ -91,7 +87,14 @@
                                         <td>{{ customer.eta }}</td>
                                         <td>{{ customer.puerto }}</td>
                                         <td>{{ customer.contenedor }}</td>
-                                        <td class="flex" style="gap: 5px;"><button (click)="showMapa(customer.numero)"><i class="fas fa-map-marked-alt"></i></button> <button (click)="showDetail(customer.id)" ><i class="fas fa-info-circle"></i></button></td>
+                                        <td class="flex" style="gap: 5px;">
+                                            <button title="ver mapa" class="btn-icon"
+                                                (click)="showMapa(customer.numero)"><i
+                                                    class="fas fa-map-marked-alt"></i></button>
+                                            <button title="ver detalles" class="btn-icon"
+                                                (click)="showDetail(customer.id)"><i
+                                                    class="fas fa-info-circle"></i></button>
+                                        </td>
                                     </tr>
                                 </ng-template>
                             </p-table>
@@ -103,3 +106,59 @@
             </div>
         </div>
     </div>
+
+    <!-- Para el modal de vista  -->
+    <p-dialog [modal]="true" [(visible)]="visible" [style]="{ width: '90rem' }" [position]="'top'"
+        [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }" [maximizable]="true" styleClass="style-modal-rastreo">
+        <div>Ubicación en tiempo real para el código : #1212450000</div>
+        <div class="grid">
+            <div class="col-6">
+                <div>Detalles de importación : </div>
+                <table>
+                    <tr>
+                        <td>Proveedor : </td>
+                        <td>Proveedor 1 </td>
+                    </tr>
+                    <tr>
+                        <td>ETD : </td>
+                        <td>01/05/2025</td>
+                    </tr>
+                    <tr>
+                        <td>ETA : </td>
+                        <td>10/05/2025</td>
+                    </tr>
+                    <tr>
+                        <td>Puertos : </td>
+                        <td>
+                            <ul>
+                                <li>Origen: Puerto de Shenzhen,China</li>
+                                <li>Destino: Puerto del Callao, Perú</li>
+                            </ul>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>Estado Actual : </td>
+                        <td>En tránsito</td>
+                    </tr>
+                    <tr>
+
+                        <td>Canal de control SUNAT : </td>
+                        <td>Naranja</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-6">
+                <div class="card" style="width: 100%; border: 2px solid brown;">
+                    <div>
+                        <iframe width="100%" height="400" frameborder="0" style="border:0"
+                            src="https://www.google.com/maps/embed/v1/view?key=TU_API_KEY&center=40.7128,-74.0060&zoom=15&maptype=roadmap"
+                            allowfullscreen>
+                        </iframe>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </p-dialog>
+</div>
