@@ -57,67 +57,81 @@
                     </div>
                 </div>
                 <!-- --- Para mi tablita  -->
-                <div class="container-table">
-                    <div class="mb-3 mt-4">
-                        <p-button type="button" icon="pi pi-chevron-left" (onClick)="prev()" [disabled]="isFirstPage()"
-                            styleClass="p-button-text" />
-                        <p-button type="button" icon="pi pi-refresh" (onClick)="reset()" styleClass="p-button-text" />
-                        <p-button type="button" icon="pi pi-chevron-right" (onClick)="next()" [disabled]="isLastPage()"
-                            styleClass="p-button-text" />
-                    </div>
-                    <div class="table-wrapper">
-                        <p-table [value]="customers" [paginator]="true" [rows]="5" [first]="first"
-                            [showCurrentPageReport]="true"
-                            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-                            (onPage)="pageChange($event)" [rowsPerPageOptions]="[5,10, 25, 50]"
-                            [responsiveLayout]="'scroll'" [style]="{ maxWidth: '768px'}">
+                <!-- Sección de la tabla responsiva -->
 
-                            <!-- 380px movil, 768 tablet -->
-                            <ng-template pTemplate="header">
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Country</th>
-                                    <th>Company</th>
-                                    <th>Representative</th>
-                                    <th>Representative</th>
-                                    <th>Representative</th>
-                                    <th>Representative</th>
-                                    <th>Representative</th>
-                                    <th>Representative</th>
-                                    <th>Representative</th>
-                                    <th>Representative</th>
-                                    <th>Representative</th>
-                                    <th>Representative</th>
-                                    <th>Representative</th>
-                                    <th>Representative</th>
-                                    <th>Representative</th>
-                                    <th>Representative</th>
-                                </tr>
-                            </ng-template>
-                            <ng-template pTemplate="body" let-customer>
-                                <tr>
-                                    <td>{{ customer.name }}</td>
-                                    <td>{{ customer.country.name }}</td>
-                                    <td>{{ customer.company }}</td>
-                                    <td>{{ customer.representative.name }}</td>
-                                    <td>{{ customer.representative.name }}</td>
-                                    <td>{{ customer.representative.name }}</td>
-                                    <td>{{ customer.representative.name }}</td>
-                                    <td>{{ customer.representative.name }}</td>
-                                    <td>{{ customer.representative.name }}</td>
-                                    <td>{{ customer.representative.name }}</td>
-                                    <td>{{ customer.representative.name }}</td>
-                                    <td>{{ customer.representative.name }}</td>
-                                    <td>{{ customer.representative.name }}</td>
-                                    <td>{{ customer.representative.name }}</td>
-                                    <td>{{ customer.representative.name }}</td>
-                                    <td>{{ customer.representative.name }}</td>
-                                    <td>{{ customer.representative.name }}</td>
-                                </tr>
-                            </ng-template>
-                        </p-table>
-                    </div>
-                </div>
+                <div class="container-table">
+    <div class="mb-3 mt-4">
+        <p-button type="button" icon="pi pi-chevron-left" (onClick)="prev()" [disabled]="isFirstPage()"
+            styleClass="p-button-text" />
+        <p-button type="button" icon="pi pi-refresh" (onClick)="reset()" styleClass="p-button-text" />
+        <p-button type="button" icon="pi pi-chevron-right" (onClick)="next()" [disabled]="isLastPage()"
+            styleClass="p-button-text" />
+    </div>
+
+    <div class="table-wrapper">
+        <p-table [value]="customers"
+                 [paginator]="true"
+                 [rows]="5"
+                 [first]="first"
+                 [showCurrentPageReport]="true"
+                 currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} registros"
+                 (onPage)="pageChange($event)"
+                 [rowsPerPageOptions]="[5,10, 25, 50]"
+                 [scrollable]="true"
+                 [scrollHeight]="'400px'"
+                 [style]="{width:'1023px'}">
+              <!-- 400px para moviles, 767px para tablets, 1023px para laptops 1024 y asi   -->
+            <ng-template pTemplate="header">
+                <tr>
+                    <th class="table-header">Nombre</th>
+                    <th class="table-header">País</th>
+                    <th class="table-header">Empresa</th>
+                    <th class="table-header">Representante</th>
+                    <th class="table-header">Código</th>
+                    <th class="table-header">Fecha</th>
+                    <th class="table-header">Estado</th>
+                    <th class="table-header">Valor</th>
+                    <th class="table-header">Tipo</th>
+                    <th class="table-header">Categoría</th>
+                    <th class="table-header">Observaciones</th>
+                    <th class="table-header">Acciones</th>
+                </tr>
+            </ng-template>
+
+            <ng-template pTemplate="body" let-customer>
+                <tr>
+                    <td class="table-cell">{{ customer.name }}</td>
+                    <td class="table-cell">{{ customer.country?.name }}</td>
+                    <td class="table-cell">{{ customer.company }}</td>
+                    <td class="table-cell">{{ customer.representative?.name }}</td>
+                    <td class="table-cell">{{ customer.code || 'N/A' }}</td>
+                    <td class="table-cell">{{ customer.date || 'N/A' }}</td>
+                    <td class="table-cell">{{ customer.status || 'N/A' }}</td>
+                    <td class="table-cell">{{ customer.value || 'N/A' }}</td>
+                    <td class="table-cell">{{ customer.type || 'N/A' }}</td>
+                    <td class="table-cell">{{ customer.category || 'N/A' }}</td>
+                    <td class="table-cell">{{ customer.observations || 'N/A' }}</td>
+                    <td class="table-cell">
+                        <p-button icon="pi pi-pencil"
+                                  styleClass="p-button-rounded p-button-success p-button-sm mr-2"
+                                  [style]="{'width': '2rem', 'height': '2rem'}"
+                                  (click)="editCustomer(customer)">
+                        </p-button>
+                        <p-button icon="pi pi-trash"
+                                  styleClass="p-button-rounded p-button-danger p-button-sm"
+                                  [style]="{'width': '2rem', 'height': '2rem'}"
+                                  (click)="deleteCustomer(customer)">
+                        </p-button>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</div>
+
+
+
+
             </div>
 
 

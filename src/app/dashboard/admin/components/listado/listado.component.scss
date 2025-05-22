@@ -1,46 +1,258 @@
 @use './../../../../../styles/variables' as *;
 @use './../../../../../styles/shared/dashboard/dashboard-style' as *;
 
-.container-numeros-incio {
-    border-radius: 10px;
-    text-align: center;
-    width: 95%;
-    margin: auto;
-    padding: 5px 5px;
-    box-shadow: 0 4px 12px rgba(6, 49, 99, 0.3);
-
-    .numero {
-        font-size: 70px;
-        font-weight: 700;
-        color: $color-secondary;
-    }
-
-    .description {
-        font-size: 14px;
-        font-weight: 600;
-        color: $color-secondary;
-    }
-}
-
-::ng-deep .p-calendar input {
-    width: 100% !important;
-}
-
-::ng-deep .p-float {
+// Contenedor principal de la tabla
+.container-table {
     width: 100%;
+    max-width: 100%;
+    margin-top: 2%;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 0 10px;
+
+    @media (max-width: 576px) {
+        padding: 0 5px;
+    }
+}
+
+// Wrapper de la tabla con scroll horizontal optimizado
+.table-wrapper {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    // Scrollbar personalizado
+    &::-webkit-scrollbar {
+        height: 14px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #f8f9fa;
+        border-radius: 7px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: linear-gradient(45deg, #6c757d, #495057);
+        border-radius: 7px;
+        border: 2px solid #f8f9fa;
+
+        &:hover {
+            background: linear-gradient(45deg, #495057, #343a40);
+        }
+    }
+
+    &::-webkit-scrollbar-corner {
+        background: #f8f9fa;
+    }
+}
+
+// Estilos específicos para PrimeNG Table
+::ng-deep .p-datatable {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #dee2e6;
+
+    .p-datatable-wrapper {
+        border-radius: 8px;
+    }
+
+    .p-datatable-table {
+        table-layout: fixed;
+        border-collapse: separate;
+        border-spacing: 0;
+        width: 100%;
+        min-width: 1310px; // Suma de todos los anchos de columna
+    }
+
+    // Headers mejorados
+    .p-datatable-thead > tr > th {
+        background: linear-gradient(135deg, $color-primary 0%, darken($color-primary, 10%) 100%);
+        color: $color-secondary;
+        font-weight: 600;
+        font-size: 13px;
+        text-align: center;
+        padding: 12px 8px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+
+        &:first-child {
+            border-top-left-radius: 8px;
+        }
+
+        &:last-child {
+            border-top-right-radius: 8px;
+        }
+    }
+
+    // Celdas del cuerpo
+    .p-datatable-tbody > tr > td {
+        padding: 10px 8px;
+        border: 1px solid #e9ecef;
+        text-align: center;
+        font-size: 12px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        vertical-align: middle;
+
+        &.long-text {
+            max-width: 150px;
+            cursor: help;
+        }
+    }
+
+    // Filas alternas y hover
+    .p-datatable-tbody > tr {
+        transition: all 0.2s ease;
+
+        &:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        &:hover {
+            background-color: #e3f2fd !important;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    }
+}
+
+// Estilos para estados de status
+.status-active {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.status-completed {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.status-pending {
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+// Botones de acción
+.action-buttons {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    align-items: center;
+
+    .action-btn {
+        transition: all 0.2s ease;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}
+
+// Paginador mejorado
+::ng-deep .p-paginator {
+    background: white;
+    border: 1px solid #dee2e6;
+    border-top: none;
+    padding: 15px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+
+    .p-paginator-pages .p-paginator-page {
+        margin: 0 2px;
+        min-width: 35px;
+        height: 35px;
+        border-radius: 6px;
+
+        &.p-paginator-page-selected {
+            background: $color-primary;
+            border-color: $color-primary;
+        }
+    }
+
+    .p-dropdown {
+        min-width: 80px;
+    }
+
+    .p-paginator-current {
+        font-weight: 500;
+        color: #495057;
+    }
+}
+
+// Media queries para diferentes dispositivos
+@media (max-width: 576px) {
+    ::ng-deep .p-datatable {
+        .p-datatable-table {
+            min-width: 800px; // Reduce en móviles
+        }
+
+        .p-datatable-thead > tr > th,
+        .p-datatable-tbody > tr > td {
+            padding: 8px 4px;
+            font-size: 11px;
+        }
+    }
+
+    .action-buttons {
+        gap: 2px;
+
+        .action-btn {
+            width: 1.5rem !important;
+            height: 1.5rem !important;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    ::ng-deep .p-datatable {
+        .p-datatable-table {
+            min-width: 1000px;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    ::ng-deep .p-datatable {
+        .p-datatable-table {
+            min-width: 1200px;
+        }
+    }
+}
+
+// Animaciones suaves
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .container-table {
-    // width: 370px !important; //movil
-    width: 100% !important;
-    overflow-x: auto;
-    border: 2px solid red;
-    margin-top: 2%;
-    box-sizing: border-box;
-}
-
-.table-wrapper {
-    overflow-x: auto;
-    width: 100% !important;
-    border: 2px solid blue;
+    animation: fadeIn 0.3s ease-out;
 }

@@ -12,11 +12,11 @@ import { CommonModule } from '@angular/common';
 })
 export class AdminComponent {
 
-  showSidebar:boolean = false;
+  sidebarVisible:boolean = true;
 
   changeVisibilidad () {
-    this.showSidebar = !this.showSidebar;
-    console.log(this.showSidebar)
+    this.sidebarVisible = !this.sidebarVisible;
+    console.log(this.sidebarVisible)
   }
 
 

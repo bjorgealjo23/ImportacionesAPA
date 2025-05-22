@@ -1,8 +1,8 @@
-@use './../../../../../styles/variables' as *;
+@use "./../../../../../styles/variables" as *;
 .video-hero-banner {
   position: relative;
   width: 100%;
-  height: 100vh; 
+  height: 100vh;
   overflow: hidden;
   background-color: #000;
 
@@ -33,7 +33,7 @@
     transform: translate(-50%, -50%);
     color: #fff;
     text-align: center;
-    font-family: 'Arial', sans-serif;
+    font-family: "Arial", sans-serif;
     z-index: 10;
 
     .spinner {
@@ -84,42 +84,70 @@
     display: flex;
     align-items: center;
     text-align: center;
-    justify-content: flex-end; 
-
+    justify-content: flex-end;
 
     .overlay-text {
       pointer-events: auto;
-      color: #fff;
-      background-color: rgba(0, 0, 0, 0.4);
+      color: $color-primary;
       padding: 2rem 3rem;
       border-radius: 8px;
-      max-width: 45%;
       user-select: none;
       width: 100%;
 
-      h1 {
-        font-size: 3rem;
-        margin-bottom: 1rem;
+      @media (max-width: 767px) {
+        max-width: 100%;
+        position: absolute;
+        top: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(0, 0, 0, 0.3);
+
+        .style-title-inicio {
+          font-size: 48px !important;
+          font-weight: 800;
+          margin-bottom: 15px !important;
+        }
       }
 
-      p {
-        font-size: 1.25rem;
-        margin-bottom: 2rem;
+      @media (min-width: 767px) {
+        position: absolute;
+        top: 2rem;
+        right: 1rem;
+        transform: none !important;
+        background-color: rgba(0, 0, 0, 0.2);
+        max-width: 65%;
+        .style-title-inicio {
+          font-size: 48px !important;
+          font-weight: 800;
+          margin-bottom: 15px !important;
+        }
       }
 
-      .cta-button {
-        background-color: #ff5722;
-        color: #fff;
-        border: none;
-        padding: 12px 32px;
-        font-size: 1rem;
-        font-weight: 600;
-        border-radius: 25px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
+      @media (min-width: 1023px) {
+        position: absolute;
+        top: 2rem;
+        right: 1rem;
+        transform: none !important;
+        background-color: rgba(0, 0, 0, 0.2);
+        max-width: 50%;
+        .style-title-inicio {
+          font-size: 48px !important;
+          font-weight: 800;
+          margin-bottom: 15px !important;
+        }
+      }
 
-        &:hover {
-          background-color: #e64a19;
+      @media (min-width: 1439px) {
+        position: absolute;
+        top: 35%;
+        right: 1rem;
+        transform: none !important;
+        background-color: rgba(0, 0, 0, 0.2);
+        max-width: 45%;
+        .style-title-inicio {
+          font-size: 65px !important;
+          font-weight: 800;
+          margin-bottom: 15px !important;
         }
       }
     }
@@ -130,13 +158,6 @@
   to {
     transform: rotate(360deg);
   }
-}
-
-
-.style-title-inicio {
-  font-size: 60px !important;
-  font-weight: 800;
-  margin-bottom: 15px !important;
 }
 
 .btn-contacto-large {

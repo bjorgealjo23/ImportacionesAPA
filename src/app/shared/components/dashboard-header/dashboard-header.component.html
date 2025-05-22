@@ -1,11 +1,17 @@
+<!-- dashboard-header.component.html -->
 <nav class="style-navbar-dash">
-    <div class="conatiner-nav">
+    <div class="container-nav">
         <div>
-            <button class="lg:hidden"
-            (click)="toggleSidebar.emit()"
-            ><i class="fas fa-bars"></i></button>
+            <!-- Botón que siempre está visible -->
+            <button
+                class="btn-toggle-sidebar"
+                (click)="onToggleSidebar()"
+                [attr.aria-label]="sidebarVisible ? 'Ocultar sidebar' : 'Mostrar sidebar'">
+                <i *ngIf="!sidebarVisible" class="fas fa-angle-double-right"></i>
+                <i *ngIf="sidebarVisible" class="fas fa-angle-double-left"></i>
+            </button>
         </div>
-        <div>
+        <div class="nav-title">
             Canal de atención
         </div>
     </div>
