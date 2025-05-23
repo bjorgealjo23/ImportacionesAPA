@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { RouterLink, RouterModule } from '@angular/router';
+import { Router, RouterLink, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard-sidebar',
@@ -13,7 +13,16 @@ export class DashboardSidebarComponent {
   @Input() isMobile: boolean = false;
   @Output() closeSidebar = new EventEmitter<void>();
 
+  constructor(private router:Router){}
+
+
   onCloseSidebar(): void {
     this.closeSidebar.emit();
   }
+
+  onGoLogin() {
+    this.router.navigate(['/acceso/inicio']);
+  }
+
+
 }
