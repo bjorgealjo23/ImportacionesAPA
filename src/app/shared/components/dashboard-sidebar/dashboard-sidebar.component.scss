@@ -1,19 +1,50 @@
 @use './../../../../styles/variables' as *;
 
 .style-sidebar-dash {
-    border: 2px solid $color-secondary;
-    background: $color-secondary;
-    color: $color-primary;
-    // height: 100vh;
-    height: 100%;
-    width: 20rem;
-    transition: transform 0.3s ease-in-out;
+  border: 2px solid $color-secondary;
+  background: $color-secondary;
+  color: $color-primary;
+  height: 100%;
+  width: 20rem;
+  transition: transform 0.3s ease-in-out;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
 
-    // Evita que el contenido se distorsione durante la transición
-    overflow: hidden;
+.sidebar-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
 
-    div {
-        padding: 1rem;
-        white-space: nowrap;
-    }
+.btn-close-sidebar {
+  background: none;
+  border: none;
+  color: $color-primary;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  &:focus {
+    outline: 2px solid rgba(0, 0, 0, 0.3);
+    outline-offset: 2px;
+  }
+
+  i {
+    font-size: 1.2rem;
+  }
+}
+
+.sidebar-content {
+  flex: 1;
+  padding: 1rem;
+  white-space: nowrap;
+  overflow-y: auto;
 }
