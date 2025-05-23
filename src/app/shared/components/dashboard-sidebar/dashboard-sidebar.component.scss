@@ -12,12 +12,29 @@
   flex-direction: column;
 }
 
-.sidebar-header {
+
+.sidebar-header-main {
+  position: relative;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
   padding: 1rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
+
+.apa-text {
+  padding: 1.5rem;
+  font-weight: bold;
+}
+
+.sidebar-header {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
 
 .btn-close-sidebar {
   background: none;
@@ -47,4 +64,78 @@
   padding: 1rem;
   white-space: nowrap;
   overflow-y: auto;
+}
+
+// -- mas 
+
+.style-sidebar-marco {
+  width: 95% !important;
+  margin: auto;
+}
+
+.container-list-sidebar {
+  font-size: 16px;
+  font-weight: 600;
+
+}
+
+// --- para el contenido del sidebar 
+.sidebar-container {
+  width: 270px;
+  height: 100vh;
+  color: white;
+  font-family: $font-base;
+}
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.menu-section {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10rem 0;
+  max-width: 100%;
+}
+
+
+
+
+.divider {
+  border: 0;
+  height: 2px;
+  background: $color-primary;
+  margin: 1rem 0;
+}
+
+.menu-item i {
+  margin-right: 8px;
+}
+
+.menu-item {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: left;
+  margin-top: 10px;
+
+  &:hover{
+      background-color: $color-fourth;
+  }
+
+  &.active {
+    background: $color-primary;
+    color: $color-secondary;
+    border-radius: 8px;
+    text-decoration: none;
+    width: 100%;
+  }
 }

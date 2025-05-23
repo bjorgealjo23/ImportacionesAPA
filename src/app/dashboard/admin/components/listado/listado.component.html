@@ -1,4 +1,4 @@
-<div class="style-marco-admin" style="border: 2px solid red">
+<div class="style-marco-admin">
   <div class="grid style-title-card">
     <div class="col-12"><i class="fas fa-ship mr-1"></i>Importaciones</div>
   </div>
@@ -227,4 +227,66 @@
       </div>
     </div>
   </p-dialog>
+
+  <!-- Para el modal de la vista de detalles -->
+
+    <p-dialog
+    [modal]="true"
+    [(visible)]="visibleDetails"
+    [style]="{ width: '90rem' }"
+    [position]="'top'"
+    [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
+    [maximizable]="true"
+    styleClass="style-modal-rastreo"
+  >
+    <ng-template pTemplate="header">
+      <div class="custom-dialog-header">
+        <i class="fas fa-info-circle mr-1"></i>
+        <span>Detalles del código : 1212450000</span>
+      </div>
+    </ng-template>
+    <div class="grid mt-2">
+      <div
+        class="col-12"
+        style="align-items: center"
+      >
+        <div class="tabla-container">
+          <div class="tabla-titulo">📦 Detalles de importación :</div>
+          <table class="tabla-detalles">
+            <tr>
+              <td>Proveedor :</td>
+              <td>Proveedor 1</td>
+            </tr>
+            <tr>
+              <td>ETD :</td>
+              <td>01/05/2025</td>
+            </tr>
+            <tr>
+              <td>ETA :</td>
+              <td>10/05/2025</td>
+            </tr>
+            <tr>
+              <td>Puertos :</td>
+              <td>
+                <ul>
+                  <li>Origen: Puerto de Shenzhen, China</li>
+                  <li>Destino: Puerto del Callao, Perú</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>Estado Actual :</td>
+              <td>En tránsito</td>
+            </tr>
+            <tr>
+              <td>Control SUNAT :</td>
+              <td>Naranja</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </p-dialog>
+
+
 </div>

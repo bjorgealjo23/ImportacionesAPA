@@ -52,12 +52,10 @@ export class ListadoComponent {
   rows = 10;
 
   visible: boolean = false;
+  visibleDetails:boolean= false;
 
-  // constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
   showDialog() {
-    // if (isPlatformBrowser(this.platformId)) {
       this.visible = true;
-    // }
   }
 
   ngOnInit(): void {
@@ -94,6 +92,6 @@ export class ListadoComponent {
   }
 
   showDetail(id: string) {
-    alert(id);
+    this.visibleDetails = true;
   }
 }

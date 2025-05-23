@@ -1,14 +1,48 @@
 <div class="style-sidebar-dash">
-    <!-- Botón de cierre solo en móvil -->
-    <div *ngIf="isMobile" class="sidebar-header">
-        <button class="btn-close-sidebar"
-                (click)="onCloseSidebar()"
-                aria-label="Cerrar sidebar">
-            <i class="fas fa-times"></i>
-        </button>
+    <!-- boton solo para movil o tablet -->
+    <div *ngIf="isMobile" class="sidebar-header-main">
+        <div style="text-align: center;"> <img src="assets/images/logo2.svg" alt=""
+                style="width: 55%; text-align: center;"></div>
+        <div class="sidebar-header">
+            <button class="btn-close-sidebar" (click)="onCloseSidebar()" aria-label="Cerrar sidebar">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
     </div>
 
     <div class="sidebar-content">
-        aquí irá el sidebar
+        <div class="style-sidebar-marco">
+            <div class="grid" *ngIf="!isMobile">
+                <div class="col-12">
+                    <div style="text-align: center;"> <img src="assets/images/logo2.svg" alt=""
+                            style="width: 65%; text-align: center;"></div>
+                </div>
+            </div>
+            <div class="sidebar-container">
+                <div class="sidebar-content">
+                    <ul class="menu-section">
+                        <li class="menu-item" routerLink="/admin/bienvenido" routerLinkActive="active"
+                            [routerLinkActiveOptions]="{ exact: true }">
+                            Dashboard
+                        </li>
+                        <li class="menu-item" routerLink="/admin/listado" routerLinkActive="active"
+                            [routerLinkActiveOptions]="{ exact: true }">
+                            Importaciones
+                        </li>
+                        <li class="menu-item">Rastreo Individual</li>
+                    </ul>
+                    <hr class="divider" />
+                    <ul class="menu-section">
+                        <li class="menu-item"><i class="fas fa-user"></i> Perfil</li>
+                        <li class="menu-item"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
     </div>
 </div>
