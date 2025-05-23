@@ -1,0 +1,63 @@
+@use './../../../../../styles/variables' as *;
+@use './../../../../../styles/shared/dashboard/dashboard-style' as *;
+
+
+.tabla-detalles {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 10px;
+  font-size: 14px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(57, 57, 58, 0.2);
+}
+
+.tabla-detalles td {
+  padding: 8px 12px;
+  border-bottom: 1px solid #ddd;
+  vertical-align: top;
+}
+
+.tabla-detalles tr:last-child td {
+  border-bottom: none;
+}
+
+.tabla-detalles td:first-child {
+  font-weight: 700;
+  color: $color-secondary;
+  width: 40%;
+}
+
+.tabla-detalles td:last-child {
+  color: $color-secondary;
+  width: 60%;
+}
+
+.tabla-container {
+  border-radius: 10px;
+  padding: 16px;
+  background-color: white;
+  width: 100%;
+  margin: auto;
+}
+
+.tabla-titulo {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: $color-secondary;
+}
+
+.tabla-detalles ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.tabla-detalles li {
+  margin-bottom: 4px;
+  margin-left: 0 !important;
+  color: $color-secondary;
+  font-size: 13px;
+}
+// -- estilos del modal similares a los que estan en e modal

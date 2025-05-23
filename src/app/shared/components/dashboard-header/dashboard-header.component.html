@@ -1,20 +1,20 @@
-<nav class="style-navbar-dash"
-     [ngClass]="{'navbar-with-sidebar': !isMobile && sidebarVisible}">
+<nav class="style-navbar-dash" [ngClass]="{'navbar-with-sidebar': !isMobile && sidebarVisible}">
     <div class="container-nav">
         <div>
-            <button class="btn-toggle-sidebar"
-                    (click)="onToggleSidebar()"
-                    [attr.aria-label]="sidebarVisible ? 'Ocultar sidebar' : 'Mostrar sidebar'">
+            <button class="btn-toggle-sidebar" (click)="onToggleSidebar()"
+                [attr.aria-label]="sidebarVisible ? 'Ocultar sidebar' : 'Mostrar sidebar'">
                 <i *ngIf="!sidebarVisible" class="fas fa-bars"></i>
                 <i *ngIf="sidebarVisible && !isMobile" class="fas fa-angle-double-left"></i>
                 <i *ngIf="sidebarVisible && isMobile" class="fas fa-times"></i>
             </button>
         </div>
         <div class="nav-title">
-            <i class="fas fa-phone-alt mr-1"></i> Canal de atención
-        </div>
-        <div>
-            <i class="fas fa-user-circle mr-1"></i> Jorge Benites
+            <div>
+                <i class="fas fa-phone-alt mr-1"></i> Canal de atención
+            </div>
+            <div>
+                <i class="fas fa-user-circle mr-1"></i> Jorge Benites
+            </div>
         </div>
     </div>
 </nav>

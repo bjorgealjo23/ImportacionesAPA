@@ -4,7 +4,7 @@ import { HomeComponent, CotizacionComponent, NosotrosComponent, ContactanosCompo
 import { InicioComponent, RecuperacionComponent, RegistroComponent } from './public/login/components';
 import { LoginComponent } from './public/login/login.component';
 import { AdminComponent } from './dashboard/admin/admin.component';
-import { BienvenidoComponent, ListadoComponent, RastreoIndividualComponent } from './dashboard/admin/components';
+import { BienvenidoComponent, ListadoComponent, PerfilComponent, RastreoIndividualComponent } from './dashboard/admin/components';
 
 export const routes: Routes = [
     {
@@ -30,6 +30,7 @@ export const routes: Routes = [
             { path: 'bienvenido', component: BienvenidoComponent },
             { path: 'listado', component: ListadoComponent },
             { path: 'rastreo', component: RastreoIndividualComponent },
+            { path: 'perfil', component: PerfilComponent },
         ]
     }
 ];

@@ -9,7 +9,6 @@
             </button>
         </div>
     </div>
-
     <div class="sidebar-content">
         <div class="style-sidebar-marco">
             <div class="grid" *ngIf="!isMobile">
@@ -29,20 +28,21 @@
                             [routerLinkActiveOptions]="{ exact: true }">
                             Importaciones
                         </li>
-                        <li class="menu-item">Rastreo Individual</li>
+                        <li class="menu-item" routerLink="/admin/rastreo" routerLinkActive="active"
+                            [routerLinkActiveOptions]="{ exact: true }">
+                            Rastreo individual
+                        </li>
                     </ul>
                     <hr class="divider" />
                     <ul class="menu-section">
-                        <li class="menu-item"><i class="fas fa-user"></i> Perfil</li>
+                        <li class="menu-item" routerLink="/admin/perfil" routerLinkActive="active"
+                            [routerLinkActiveOptions]="{ exact: true }">
+                            <i class="fas fa-user"></i> Perfil
+                        </li>
                         <li class="menu-item"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</li>
                     </ul>
                 </div>
             </div>
-
         </div>
-
-
-
-
     </div>
 </div>
