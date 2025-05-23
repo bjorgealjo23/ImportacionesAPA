@@ -1,5 +1,14 @@
-import { CommonModule } from '@angular/common';
-import { Component, OnInit, OnDestroy, ElementRef, ViewChild, HostListener, Inject, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  ElementRef,
+  ViewChild,
+  HostListener,
+  Inject,
+  PLATFORM_ID,
+} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
@@ -29,13 +38,12 @@ import { DialogModule } from 'primeng/dialog';
     CalendarModule,
     HttpClientModule,
     TableModule,
-    DialogModule
+    DialogModule,
   ],
   templateUrl: './listado.component.html',
-  styleUrl: './listado.component.scss'
+  styleUrl: './listado.component.scss',
 })
-export class ListadoComponent  {
-  @ViewChild('tableWrapper', { static: false }) tableWrapper!: ElementRef;
+export class ListadoComponent {
   // Variables existentes
   value: any;
   date2: any;
@@ -45,43 +53,15 @@ export class ListadoComponent  {
 
   visible: boolean = false;
 
+  // constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
   showDialog() {
-    this.visible = true;
+    // if (isPlatformBrowser(this.platformId)) {
+      this.visible = true;
+    // }
   }
 
   ngOnInit(): void {
     this.customers = dataToTable;
-
-  }
-
-
-
-
-
-  // Variables para el ancho responsivo
-  tableWidth: string = '400px';
-  scrollBarWidth: number = 0;
-
-  // Breakpoints para diferentes dispositivos
-  private breakpoints = {
-    mobile: 576,
-    tablet: 768,
-    laptop: 1024,
-    desktop: 1200
-  };
-
-
-
-
-
-
-
-  // Obtiene el estilo dinámico para la tabla
-  getTableStyle() {
-    return {
-      'width': this.tableWidth,
-      'max-width': '100%'
-    };
   }
 
   pageChange(event: any) {
@@ -90,7 +70,9 @@ export class ListadoComponent  {
   }
 
   isLastPage(): boolean {
-    return this.customers ? this.first === this.customers.length - this.rows : true;
+    return this.customers
+      ? this.first === this.customers.length - this.rows
+      : true;
   }
 
   isFirstPage(): boolean {
@@ -107,17 +89,11 @@ export class ListadoComponent  {
     console.log('Eliminando:', customer);
   }
 
-
   showMapa(numero: string) {
     this.showDialog();
   }
 
   showDetail(id: string) {
-    alert(id)
+    alert(id);
   }
-
-
-
-
-
 }

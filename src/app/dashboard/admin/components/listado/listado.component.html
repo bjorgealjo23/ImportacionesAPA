@@ -1,164 +1,230 @@
-<div class="style-marco-admin" style="border: 2px solid red;">
-    <div class="grid style-title-card">
-        <div class="col-12">
-            <i class="fas fa-ship mr-1"></i>Importaciones
-        </div>
-    </div>
-    <div class="grid mt-3">
-        <div class="card-container-full">
-
-            <div class="style-marco-trabajo mt-4">
-                <div class="grid">
-                    <div class="col-12 sm:col-12 md:col-6 lg:col-6 style-subtitle-generic">
-                        Listado de Importaciones
-                    </div>
-                    <div class="col-12 sm:col-12 md:col-6 lg:col-6 style-subtitle-generic sm:text-left md:text-right">
-                        📦 Importaciones Sol de Laredo SAC
-                    </div>
-
-
-                    <div class="col-12 sm:col-6 md:col-3 lg:col-3">
-                        <div class="card w-full">
-                            <p-floatLabel class="w-full">
-                                <p-calendar [(ngModel)]="date2" inputId="fechaInicio"
-                                    [style]="{width: '100%'}"></p-calendar>
-                                <label for="fechaInicio">Fecha inicio</label>
-                            </p-floatLabel>
-                        </div>
-                    </div>
-
-                    <div class="col-12 sm:col-6 md:col-3 lg:col-3">
-                        <div class="card w-full">
-                            <p-floatLabel class="w-full">
-                                <p-calendar [(ngModel)]="date2" inputId="fechaFin"
-                                    [style]="{width: '100%'}"></p-calendar>
-                                <label for="fechaFin">Fecha final</label>
-                            </p-floatLabel>
-                        </div>
-                    </div>
-                    <div class="col-12 sm:col-6 mb-2 md:col-3 lg:col-3">
-                        <p-floatLabel class="w-full">
-                            <input pInputText type="text" id="username" class="w-full input-border"
-                                [(ngModel)]="value" />
-                            <label for="username">Proveedor</label>
-                        </p-floatLabel>
-                    </div>
-                    <div class="col-12 sm:col-6 md:col-3 lg:col-3">
-                        <p-floatLabel class="w-full">
-                            <input pInputText type="text" id="username" class="w-full input-border"
-                                [(ngModel)]="value" />
-                            <label for="username">Código o ID</label>
-                        </p-floatLabel>
-                    </div>
-                </div>
-                <div class="grid mt-2">
-                    <div class="col-12">
-                        <button class="btn-large"><i class="fas fa-search mr-1"></i> Buscar</button>
-                    </div>
-                </div>
-
-                <!-- prueba para tabla nuevo -->
-                <div class="container-table mt-4">
-                    <div class="card" style="width: 100%; max-width: 100vw; max-height: 100vh; overflow-x: auto;">
-                        <div class="table-wrapper">
-                            <p-table [value]="customers" [paginator]="true" [rows]="5" [first]="first"
-                                [showCurrentPageReport]="true"
-                                currentPageReportTemplate="Mostrando {first} al {last} de {totalRecords} registros"
-                                (onPage)="pageChange($event)" [rowsPerPageOptions]="[5,10, 25, 50]"
-                                styleClass="custom-paginator" [scrollable]="true" scrollHeight="420px">
-                                <ng-template pTemplate="header">
-                                    <tr>
-                                        <th style="width:120px">Fecha</th>
-                                        <th style="width:120px">ID</th>
-                                        <th style="width:200px">Proveedor</th>
-                                        <th style="width:250px">Estado</th>
-                                        <th style="width:120px">ETA</th>
-                                        <th style="width:120px">Puerto</th>
-                                        <th style="width:120px">Contenedor</th>
-                                        <th style="width:120px">Acciones</th>
-                                    </tr>
-                                </ng-template>
-                                <ng-template pTemplate="body" let-customer>
-                                    <tr>
-                                        <td>{{ customer.fecha }}</td>
-                                        <td>{{ customer.id }}</td>
-                                        <td>{{ customer.proveedor }}</td>
-                                        <td>{{ customer.estado }}</td>
-                                        <td>{{ customer.eta }}</td>
-                                        <td>{{ customer.puerto }}</td>
-                                        <td>{{ customer.contenedor }}</td>
-                                        <td class="flex" style="gap: 5px;">
-                                            <button title="ver mapa" class="btn-icon"
-                                                (click)="showMapa(customer.numero)"><i
-                                                    class="fas fa-map-marked-alt"></i></button>
-                                            <button title="ver detalles" class="btn-icon"
-                                                (click)="showDetail(customer.id)"><i
-                                                    class="fas fa-info-circle"></i></button>
-                                        </td>
-                                    </tr>
-                                </ng-template>
-                            </p-table>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-        </div>
-    </div>
-
-    <!-- Para el modal de vista  -->
-    <p-dialog [modal]="true" [(visible)]="visible" [style]="{ width: '90rem' }" [position]="'top'"
-        [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }" [maximizable]="true" styleClass="style-modal-rastreo">
-        <div>Ubicación en tiempo real para el código : #1212450000</div>
+<div class="style-marco-admin" style="border: 2px solid red">
+  <div class="grid style-title-card">
+    <div class="col-12"><i class="fas fa-ship mr-1"></i>Importaciones</div>
+  </div>
+  <div class="grid mt-3">
+    <div class="card-container-full">
+      <div class="style-marco-trabajo mt-4">
         <div class="grid">
-            <div class="col-6">
-                <div>Detalles de importación : </div>
-                <table>
-                    <tr>
-                        <td>Proveedor : </td>
-                        <td>Proveedor 1 </td>
-                    </tr>
-                    <tr>
-                        <td>ETD : </td>
-                        <td>01/05/2025</td>
-                    </tr>
-                    <tr>
-                        <td>ETA : </td>
-                        <td>10/05/2025</td>
-                    </tr>
-                    <tr>
-                        <td>Puertos : </td>
-                        <td>
-                            <ul>
-                                <li>Origen: Puerto de Shenzhen,China</li>
-                                <li>Destino: Puerto del Callao, Perú</li>
-                            </ul>
-                        </td>
+          <div
+            class="col-12 sm:col-12 md:col-6 lg:col-6 style-subtitle-generic"
+          >
+            Listado de Importaciones
+          </div>
+          <div
+            class="col-12 sm:col-12 md:col-6 lg:col-6 style-subtitle-generic sm:text-left md:text-right"
+          >
+            📦 Importaciones Sol de Laredo SAC
+          </div>
 
-                    </tr>
-                    <tr>
-                        <td>Estado Actual : </td>
-                        <td>En tránsito</td>
-                    </tr>
-                    <tr>
-
-                        <td>Canal de control SUNAT : </td>
-                        <td>Naranja</td>
-                    </tr>
-                </table>
+          <div class="col-12 sm:col-6 md:col-3 lg:col-3">
+            <div class="card w-full">
+              <p-floatLabel class="w-full">
+                <p-calendar
+                  [(ngModel)]="date2"
+                  inputId="fechaInicio"
+                  [style]="{ width: '100%' }"
+                ></p-calendar>
+                <label for="fechaInicio">Fecha inicio</label>
+              </p-floatLabel>
             </div>
-            <div class="col-6">
-                <div class="card" style="width: 100%; border: 2px solid brown;">
-                    <div>
-                        <iframe width="100%" height="400" frameborder="0" style="border:0"
-                            src="https://www.google.com/maps/embed/v1/view?key=TU_API_KEY&center=40.7128,-74.0060&zoom=15&maptype=roadmap"
-                            allowfullscreen>
-                        </iframe>
+          </div>
 
-                    </div>
-                </div>
+          <div class="col-12 sm:col-6 md:col-3 lg:col-3">
+            <div class="card w-full">
+              <p-floatLabel class="w-full">
+                <p-calendar
+                  [(ngModel)]="date2"
+                  inputId="fechaFin"
+                  [style]="{ width: '100%' }"
+                ></p-calendar>
+                <label for="fechaFin">Fecha final</label>
+              </p-floatLabel>
             </div>
+          </div>
+          <div class="col-12 sm:col-6 mb-2 md:col-3 lg:col-3">
+            <p-floatLabel class="w-full">
+              <input
+                pInputText
+                type="text"
+                id="username"
+                class="w-full input-border"
+                [(ngModel)]="value"
+              />
+              <label for="username">Proveedor</label>
+            </p-floatLabel>
+          </div>
+          <div class="col-12 sm:col-6 md:col-3 lg:col-3">
+            <p-floatLabel class="w-full">
+              <input
+                pInputText
+                type="text"
+                id="username"
+                class="w-full input-border"
+                [(ngModel)]="value"
+              />
+              <label for="username">Código o ID</label>
+            </p-floatLabel>
+          </div>
         </div>
-    </p-dialog>
+        <div class="grid mt-2">
+          <div class="col-12">
+            <button class="btn-large">
+              <i class="fas fa-search mr-1"></i> Buscar
+            </button>
+          </div>
+        </div>
+
+        <!-- prueba para tabla nuevo -->
+        <div class="container-table mt-4">
+          <div
+            class="card"
+            style="
+              width: 100%;
+              max-width: 100vw;
+              max-height: 100vh;
+              overflow-x: auto;
+            "
+          >
+            <div class="table-wrapper">
+              <p-table
+                [value]="customers"
+                [paginator]="true"
+                [rows]="5"
+                [first]="first"
+                [showCurrentPageReport]="true"
+                currentPageReportTemplate="Mostrando {first} al {last} de {totalRecords} registros"
+                (onPage)="pageChange($event)"
+                [rowsPerPageOptions]="[5, 10, 25, 50]"
+                styleClass="custom-paginator"
+                [scrollable]="true"
+                scrollHeight="420px"
+              >
+                <ng-template pTemplate="header">
+                  <tr>
+                    <th style="width: 120px">Fecha</th>
+                    <th style="width: 120px">ID</th>
+                    <th style="width: 200px">Proveedor</th>
+                    <th style="width: 250px">Estado</th>
+                    <th style="width: 120px">ETA</th>
+                    <th style="width: 120px">Puerto</th>
+                    <th style="width: 120px">Contenedor</th>
+                    <th style="width: 120px">Acciones</th>
+                  </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-customer>
+                  <tr>
+                    <td>{{ customer.fecha }}</td>
+                    <td>{{ customer.id }}</td>
+                    <td>{{ customer.proveedor }}</td>
+                    <td>{{ customer.estado }}</td>
+                    <td>{{ customer.eta }}</td>
+                    <td>{{ customer.puerto }}</td>
+                    <td>{{ customer.contenedor }}</td>
+                    <td class="flex" style="gap: 5px">
+                      <button
+                        title="ver mapa"
+                        class="btn-icon"
+                        (click)="showMapa(customer.numero)"
+                      >
+                        <i class="fas fa-map-marked-alt"></i>
+                      </button>
+                      <button
+                        title="ver detalles"
+                        class="btn-icon"
+                        (click)="showDetail(customer.id)"
+                      >
+                        <i class="fas fa-info-circle"></i>
+                      </button>
+                    </td>
+                  </tr>
+                </ng-template>
+              </p-table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Para el modal de vista  -->
+  <p-dialog
+    [modal]="true"
+    [(visible)]="visible"
+    [style]="{ width: '90rem' }"
+    [position]="'top'"
+    [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
+    [maximizable]="true"
+    styleClass="style-modal-rastreo"
+  >
+    <ng-template pTemplate="header">
+      <div class="custom-dialog-header">
+        <i class="fas fa-location-arrow mr-1"></i>
+        <span>Rastreo con código : 1212450000</span>
+      </div>
+    </ng-template>
+
+    <!-- <div class="title-style-modal">
+      <i class="fas fa-location-arrow"></i> rastreo con código : #1212450000
+    </div> -->
+    <div class="grid mt-2">
+      <div
+        class="col-12 sm:col-12 md:col-12 lg:col-4"
+        style="align-items: center"
+      >
+        <div class="tabla-container">
+          <div class="tabla-titulo">📦 Detalles de importación :</div>
+          <table class="tabla-detalles">
+            <tr>
+              <td>Proveedor :</td>
+              <td>Proveedor 1</td>
+            </tr>
+            <tr>
+              <td>ETD :</td>
+              <td>01/05/2025</td>
+            </tr>
+            <tr>
+              <td>ETA :</td>
+              <td>10/05/2025</td>
+            </tr>
+            <tr>
+              <td>Puertos :</td>
+              <td>
+                <ul>
+                  <li>Origen: Puerto de Shenzhen, China</li>
+                  <li>Destino: Puerto del Callao, Perú</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>Estado Actual :</td>
+              <td>En tránsito</td>
+            </tr>
+            <tr>
+              <td>Control SUNAT :</td>
+              <td>Naranja</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="col-12 sm:col-12 md:col-12 lg:col-8">
+        <div
+          class="card"
+          style="width: 100%; border: 2px solid white; border-radius: 10px"
+        >
+          <div>
+            <iframe
+              width="100%"
+              height="400"
+              frameborder="0"
+              style="border: 0"
+              src="https://www.google.com/maps/embed/v1/view?key=TU_API_KEY&center=40.7128,-74.0060&zoom=15&maptype=roadmap"
+              allowfullscreen
+            >
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </p-dialog>
 </div>
