@@ -2,8 +2,9 @@
 
 .main-content {
   padding-top: 6vh;
-  height: 100vh;
+  min-height: calc(100vh - 11vh); // Altura mínima sin el footer
   overflow-y: auto;
+  flex: 1; // Para que tome el espacio disponible
 }
 
 .sidebar-overlay {

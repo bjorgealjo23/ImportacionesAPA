@@ -8,5 +8,4 @@ import { Component } from '@angular/core';
   styleUrl: './dashboard-footer.component.scss'
 })
 export class DashboardFooterComponent {
-
 }
