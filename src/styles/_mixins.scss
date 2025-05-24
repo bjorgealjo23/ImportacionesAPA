@@ -13,9 +13,18 @@
   cursor: pointer;
 
   &:hover {
-    opacity: 0.9;
+    background: $color-primary;
+    color: $color-secondary;
+    border: 2px solid $color-secondary;
+    font-weight: 600;
+    
   }
 }
+
+
+
+
+
 
 @mixin button-style-inverso($background, $color: #fff) {
   background-color: $background;
