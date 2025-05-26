@@ -148,8 +148,12 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
     video.addEventListener('error', this.onVideoError.bind(this));
   }
 
+  private debug = false;
+
   private onVideoEvent = (event: Event) => {
-    console.log(`Video event: ${event.type}`, event);
+    if (this.debug) {
+      console.log(`Video event: ${event.type}`, event);
+    }
   };
 
   private onLoadStart = () => {

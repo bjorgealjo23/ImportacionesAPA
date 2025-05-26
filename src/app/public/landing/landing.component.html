@@ -1,3 +1,21 @@
-<app-public-header/>
-<router-outlet />
-<app-public-footer/>
+<app-public-header [activeSection]="activeSection"></app-public-header>
+
+    <main #mainContent>
+      <section id="home" class="section">
+        <app-home></app-home>
+      </section>
+
+      <section id="cotizacion" class="section">
+        <app-cotizacion></app-cotizacion>
+      </section>
+
+      <section id="nosotros" class="section">
+        <app-nosotros></app-nosotros>
+      </section>
+
+      <section id="contactanos" class="section">
+        <app-contactanos></app-contactanos>
+      </section>
+    </main>
+
+    <app-public-footer></app-public-footer>
