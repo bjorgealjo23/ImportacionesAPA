@@ -1,31 +1,58 @@
 @use './../../../../../../../styles/variables' as *;
 
-::ng-deep .p-carousel-prev,
-::ng-deep .p-carousel-next {
+::ng-deep .owl-carousel {
+  position: relative;
+}
+
+::ng-deep .owl-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  margin-top: 10px;
+}
+
+::ng-deep .owl-dots .owl-dot span {
+  background-color: $color-third !important;
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+::ng-deep .owl-dots .owl-dot.active span {
+  background-color: $color-secondary !important;
+}
+
+::ng-deep .owl-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  bottom: 0; 
+  z-index: 10;
+}
+
+::ng-deep .owl-nav button {
   background-color: #f5f5f5;
   color: #333;
   border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  border-radius: 10%;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
 }
 
-::ng-deep .p-carousel-prev:hover,
-::ng-deep .p-carousel-next:hover {
+::ng-deep .owl-nav button:hover {
   background-color: $color-secondary;
   color: #fff;
-}
-
-::ng-deep .p-carousel-indicators .p-carousel-indicator button {
-  background-color: $color-third !important;
-  width: 17px;
-  height: 12px;
-  border-radius: 20%;
-}
-
-// -- para el activo
-::ng-deep .p-carousel-indicators .p-carousel-indicator.p-highlight button {
-  background-color: $color-secondary !important; 
 }
 
 .image-container {
@@ -36,8 +63,7 @@
 .carousel-image {
   width: 100%;
   height: 330px;
-  object-fit: cover;
+  object-fit: cover !important;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(9, 30, 44, 0.2);
 }
-

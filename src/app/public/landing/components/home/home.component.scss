@@ -97,7 +97,7 @@
       @media (max-width: 767px) {
         max-width: 100%;
         position: absolute;
-        top: 1rem;
+        top: 8rem;
         left: 50%;
         transform: translateX(-50%);
         background-color: rgba(0, 0, 0, 0.3);
@@ -111,8 +111,8 @@
 
       @media (min-width: 767px) {
         position: absolute;
-        top: 2rem;
-        right: 1rem;
+        top: 10rem;
+        right: 0.4rem;
         transform: none !important;
         background-color: rgba(0, 0, 0, 0.2);
         max-width: 65%;
@@ -125,7 +125,7 @@
 
       @media (min-width: 1023px) {
         position: absolute;
-        top: 2rem;
+        top: 13rem;
         right: 1rem;
         transform: none !important;
         background-color: rgba(0, 0, 0, 0.2);

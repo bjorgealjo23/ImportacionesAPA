@@ -91,7 +91,6 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
       }
     }
 
-    // Verifica explícitamente que sea un HTMLVideoElement
     if (!(this.videoElement.nativeElement instanceof HTMLVideoElement)) {
       console.error('El elemento no es un HTMLVideoElement');
       this.handleVideoError();
@@ -182,23 +181,19 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
 
   private loadVideoSource(video: HTMLVideoElement) {
     try {
-      // Primero verifica que el elemento sea válido
       if (!(video instanceof HTMLVideoElement)) {
         throw new Error('El elemento no es un HTMLVideoElement válido');
       }
 
-      // Pausa el video si está reproduciéndose
       if (!video.paused) {
         video.pause();
       }
 
-      // Limpia la fuente actual
       video.removeAttribute('src');
       const source = document.createElement('source');
       source.src = this.videoSrc;
       source.type = 'video/mp4';
 
-      // Limpia cualquier fuente anterior y añade la nueva
       while (video.firstChild) {
         video.removeChild(video.firstChild);
       }

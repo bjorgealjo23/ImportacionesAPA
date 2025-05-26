@@ -1,9 +1,9 @@
-<p-carousel  
-[value]="lstImagenes" [numVisible]="1" [numScroll]="1" [circular]="false"
-  class="w-full">
-  <ng-template pTemplate="item" let-image>
-    <div class="image-container">
-      <img [src]="'assets/images/carousel/' + image.name" [alt]="image.alt" class="carousel-image" />
-    </div>
-  </ng-template>
-</p-carousel>
+<owl-carousel-o [options]="customOptions" *ngIf="lstImagenes.length > 0" class="w-full">
+  <ng-container *ngFor="let image of lstImagenes">
+    <ng-template carouselSlide>
+      <div class="image-container">
+        <img [src]="'assets/images/carousel/' + image.name" [alt]="image.alt" class="carousel-image" />
+      </div>
+    </ng-template>
+  </ng-container>
+</owl-carousel-o>
