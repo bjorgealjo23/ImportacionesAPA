@@ -42,35 +42,57 @@ export class PublicHeaderComponent {
   }
 
   // Navegación suave a las secciones
-  navigateToSection(route: string, path: string): void {
-    this.isMenuOpen = false; 
+  // navigateToSection(route: string, path: string): void {
+  //   this.isMenuOpen = false; 
 
-    if (
-      this.router.url.startsWith('/acceso') ||
-      this.router.url.startsWith('/admin')
-    ) {
-      this.router.navigate([path]);
-    } else {
-      this.router.navigate([path]).then(() => {
-        if (this.isBrowser) {
-          setTimeout(() => {
-            const section = document.getElementById(route);
-            if (section) {
-              const headerHeight = 120;
-              console.log(section)
-              // console.log(section.offsetTop)
-              const previusSectioTop = section.offsetTop + 15;
-              const sectionTop = previusSectioTop - headerHeight;
-              window.scrollTo({
-                top: sectionTop,
-                behavior: 'smooth',
-              });
-            }
-          }, 100);
+  //   if (
+  //     this.router.url.startsWith('/acceso') ||
+  //     this.router.url.startsWith('/admin')
+  //   ) {
+  //     this.router.navigate([path]);
+  //   } else {
+  //     this.router.navigate([path]).then(() => {
+  //       if (this.isBrowser) {
+  //         setTimeout(() => {
+  //           const section = document.getElementById(route);
+  //           if (section) {
+  //             const headerHeight = 120;
+  //             console.log(section)
+  //             // console.log(section.offsetTop)
+  //             const previusSectioTop = section.offsetTop + 15;
+  //             const sectionTop = previusSectioTop - headerHeight;
+  //             window.scrollTo({
+  //               top: sectionTop,
+  //               behavior: 'smooth',
+  //             });
+  //           }
+  //         }, 100);
+  //       }
+  //     });
+  //   }
+  // }
+
+
+  navigateToSection(route: string, path: string): void {
+  this.isMenuOpen = false;
+
+  this.router.navigateByUrl(path).then(() => {
+    if (this.isBrowser && !this.router.url.startsWith('/acceso') && !this.router.url.startsWith('/admin')) {
+      setTimeout(() => {
+        const section = document.getElementById(route);
+        if (section) {
+          const headerHeight = 120;
+          const sectionTop = section.offsetTop - headerHeight + 15;
+          window.scrollTo({
+            top: sectionTop,
+            behavior: 'smooth',
+          });
         }
-      });
+      }, 100);
     }
-  }
+  });
+}
+
 
   irInicioSesion(): void {
     this.isMenuOpen = false;

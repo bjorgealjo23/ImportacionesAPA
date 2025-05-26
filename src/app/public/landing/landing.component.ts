@@ -31,6 +31,7 @@ export class LandingComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   ngOnInit(): void {
+
     this.routerSubscription = this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe((event) => {
