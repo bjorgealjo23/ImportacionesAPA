@@ -6,7 +6,8 @@
     padding: 18px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     border-radius: 12px;
-    background-color: white;
+    background-color: $color-primary;
+    cursor: pointer;
 }
 
 .subtitle-card {
@@ -23,8 +24,12 @@
 
 .icon-card {
     color: $color-secondary;
-    // font-size: 120px !important;
     font-size: clamp(90px, 1rem, 120px) !important;
     text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.container-card:hover .icon-card {
+  transform: translateY(-10px);
 }
 

@@ -29,7 +29,13 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   fallbackImage =
     'https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=1920&q=80';
 
-  private isBrowser = typeof window !== 'undefined';
+  private get isBrowser(): boolean {
+    return (
+      typeof window !== 'undefined' &&
+      typeof window.requestAnimationFrame === 'function' &&
+      typeof HTMLVideoElement !== 'undefined'
+    );
+  }
 
   constructor(private cdr: ChangeDetectorRef) {}
 
@@ -44,13 +50,18 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy() {
+    if (!this.isBrowser) return;
+
     const video = this.videoElement?.nativeElement;
 
-    if (video instanceof HTMLVideoElement) {
+    if (video && video instanceof HTMLVideoElement) {
       try {
-        video.pause();
-        video.src = '';
-        video.load();
+        if (video.pause) video.pause();
+        video.removeAttribute('src');
+        while (video.firstChild) {
+          video.removeChild(video.firstChild);
+        }
+        if (video.load) video.load();
       } catch (err) {
         console.warn('No se pudo limpiar el video:', err);
       }
@@ -58,21 +69,33 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   }
 
   private initializeVideo() {
+    if (!this.isBrowser) {
+      this.handleVideoError();
+      return;
+    }
+
     if (!this.videoElement?.nativeElement) {
       if (this.retryCount < this.maxRetries) {
         this.retryCount++;
         console.log(
           `Reintentando inicializar video (${this.retryCount}/${this.maxRetries})...`
         );
-        setTimeout(() => {
-          this.initializeVideo();
-        }, 300);
+        setTimeout(() => this.initializeVideo(), 300);
         return;
       } else {
-        console.warn('No se pudo encontrar el elemento video después de varios intentos');
+        console.warn(
+          'No se pudo encontrar el elemento video después de varios intentos'
+        );
         this.handleVideoError();
         return;
       }
+    }
+
+    // Verifica explícitamente que sea un HTMLVideoElement
+    if (!(this.videoElement.nativeElement instanceof HTMLVideoElement)) {
+      console.error('El elemento no es un HTMLVideoElement');
+      this.handleVideoError();
+      return;
     }
 
     this.setupVideo();
@@ -100,6 +123,20 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   }
 
   private setupVideoEventListeners(video: HTMLVideoElement) {
+    const events = [
+      'abort',
+      'emptied',
+      'stalled',
+      'suspend',
+      'waiting',
+      'progress',
+      'timeupdate',
+    ];
+
+    events.forEach((event) => {
+      video.removeEventListener(event, this.onVideoEvent);
+      video.addEventListener(event, this.onVideoEvent.bind(this));
+    });
     video.removeEventListener('loadstart', this.onLoadStart);
     video.removeEventListener('canplay', this.onCanPlay);
     video.removeEventListener('loadeddata', this.onLoadedData);
@@ -110,6 +147,10 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
     video.addEventListener('loadeddata', this.onLoadedData.bind(this));
     video.addEventListener('error', this.onVideoError.bind(this));
   }
+
+  private onVideoEvent = (event: Event) => {
+    console.log(`Video event: ${event.type}`, event);
+  };
 
   private onLoadStart = () => {
     console.log('Video: iniciando carga...');
@@ -137,8 +178,28 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
 
   private loadVideoSource(video: HTMLVideoElement) {
     try {
-      video.src = this.videoSrc;
-      video.load();
+      // Primero verifica que el elemento sea válido
+      if (!(video instanceof HTMLVideoElement)) {
+        throw new Error('El elemento no es un HTMLVideoElement válido');
+      }
+
+      // Pausa el video si está reproduciéndose
+      if (!video.paused) {
+        video.pause();
+      }
+
+      // Limpia la fuente actual
+      video.removeAttribute('src');
+      const source = document.createElement('source');
+      source.src = this.videoSrc;
+      source.type = 'video/mp4';
+
+      // Limpia cualquier fuente anterior y añade la nueva
+      while (video.firstChild) {
+        video.removeChild(video.firstChild);
+      }
+      video.appendChild(source);
+
       console.log('Video source establecida:', this.videoSrc);
     } catch (error) {
       console.error('Error al establecer el video source:', error);
@@ -162,7 +223,7 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   }
 
   private handleVideoError() {
-    console.log('Mostrando imagen de respaldo debido a error de video');
+    // console.log('Mostrando imagen de respaldo debido a error de video');
     this.isLoading = false;
     this.videoFailed = true;
     this.cdr.detectChanges();

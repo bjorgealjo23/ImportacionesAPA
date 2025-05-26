@@ -1,6 +1,15 @@
 <div class="video-hero-banner">
   <ng-container *ngIf="!videoFailed; else fallbackTpl">
-    <video #heroVideo muted loop playsinline [hidden]="isLoading" [class.loaded]="!isLoading" [src]="videoSrc"></video>
+    <video
+      #heroVideo
+      muted
+      loop
+      playsinline
+      [hidden]="isLoading"
+      [class.loaded]="!isLoading"
+    >
+      <source [src]="videoSrc" type="video/mp4" />
+    </video>
 
     <div *ngIf="isLoading" class="loader">
       <div class="spinner"></div>
@@ -9,15 +18,21 @@
   </ng-container>
 
   <ng-template #fallbackTpl>
-    <img [src]="fallbackImage" alt="Imagen de fondo de barcos" class="fallback-image" />
+    <img
+      [src]="fallbackImage"
+      alt="Imagen de fondo de barcos"
+      class="fallback-image"
+    />
     <button class="retry-video-btn" (click)="playVideoManually()">
       ▶ Reproducir Video
     </button>
   </ng-template>
 
-  <div class="overlay-content" >
+  <div class="overlay-content">
     <div class="overlay-text">
-      <div class="style-title-inicio">Rastrea tu carga en tiempo real, estés donde estés.</div>
+      <div class="style-title-inicio">
+        Rastrea tu carga en tiempo real, estés donde estés.
+      </div>
       <button class="btn-contacto-large">Contactarme ahora</button>
     </div>
   </div>

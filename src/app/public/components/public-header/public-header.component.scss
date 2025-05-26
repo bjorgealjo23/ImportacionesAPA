@@ -1,9 +1,10 @@
-@use '../../../../styles/variables' as *;
+@use "../../../../styles/variables" as *;
 
 .style-section-nabvar {
-  border: 2px solid $color-secondary;
+  border-style: solid;
+  border-color: $color-secondary;
+  border-width: 0 0 3px 0;
   background: $color-primary !important;
-
 }
 
 .btn-close {
@@ -34,88 +35,59 @@
     cursor: pointer;
   }
 
-  // .nav-items {
-  //   display: flex;
-  //   gap: 2rem;
-  //   list-style: none;
-  //   padding: 0;
-  //   width: 100%;
-  //   margin-top: 30px !important;
-  //   padding: 0 50px !important;
-
-  //   .nav-item {
-  //     a {
-  //       text-decoration: none;
-  //       color: $color-secondary;
-  //       font-weight: 500;
-  //       font-size: clamp(13px,1.05rem,18px);
-  //     }
-
-  //     a:hover {
-  //       font-weight: 700;
-  //     }
-  //   }
-
-  //   &.open {
-  //     display: flex;
-  //   }
-  // }
-
   .nav-items {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
-  padding: 0;
-  width: 100%;
-  margin-top: 30px !important;
-  padding: 0 50px !important;
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    margin-top: 30px !important;
+    padding: 0 50px !important;
 
-  .nav-item {
-    position: relative;
-    a {
-      text-decoration: none;
-      color: $color-secondary;
-      font-weight: 500;
-      font-size: clamp(13px, 1.05rem, 18px);
+    .nav-item {
       position: relative;
-      display: inline-block;
-
-      &::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: -2px; 
-        width: 100%;
-        height: 2px;
-        background-color: currentColor;
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform 0.3s ease-in-out;
-      }
-
-      &:hover {
-        font-weight: 700;
+      a {
+        text-decoration: none;
+        color: $color-secondary;
+        font-weight: 500;
+        font-size: clamp(13px, 1.05rem, 18px);
+        position: relative;
+        display: inline-block;
 
         &::after {
-          transform: scaleX(1);
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -2px;
+          width: 100%;
+          height: 2px;
+          background-color: currentColor;
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: transform 0.3s ease-in-out;
+        }
+
+        &:hover {
+          font-weight: 700;
+
+          &::after {
+            transform: scaleX(1);
+          }
         }
       }
     }
-  }
 
-  &.open {
-    display: flex;
+    &.open {
+      display: flex;
+    }
   }
-}
-
 
   .container-derecha {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     margin-left: auto;
     padding: 0;
   }
-
 
   // -- media query para el tema responsivo
 
@@ -139,7 +111,6 @@
 
       .nav-item {
         padding: 0.5rem 0;
-
       }
 
       .nav-item a {
@@ -161,6 +132,4 @@
   }
 }
 
-
 // --- solo para probar csss
-

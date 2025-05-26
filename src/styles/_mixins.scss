@@ -1,6 +1,30 @@
 @use './variables' as *;
 
+// @mixin button-style($background, $color: #fff, $anchobtn) {
+//   background-color: $background;
+//   color: $color;
+//   font-size: $font-size-in-buttons;
+//   font-weight: 500;
+//   padding: 11px;
+//   border: none;
+//   border-radius: 5px;
+//   font-family: $font-base;
+//   width: $anchobtn !important;
+//   cursor: pointer;
+
+//   &:hover {
+//     background: transparent;
+//     color: $color-secondary;
+//     font-weight: 600;
+//     border-top: 1px solid $color-secondary;
+//     border-bottom: 1px solid $color-secondary;
+//     border-radius: 0 !important;
+
+//   }
+// }
+
 @mixin button-style($background, $color: #fff, $anchobtn) {
+  position: relative;
   background-color: $background;
   color: $color;
   font-size: $font-size-in-buttons;
@@ -11,15 +35,42 @@
   font-family: $font-base;
   width: $anchobtn !important;
   cursor: pointer;
+  overflow: hidden;
+
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: $color-secondary;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
+  }
 
   &:hover {
-    background: $color-primary;
+    background: transparent;
     color: $color-secondary;
-    border: 2px solid $color-secondary;
     font-weight: 600;
-    
+    border-radius: 0 !important;
+
+    &::before,
+    &::after {
+      transform: scaleX(1);
+    }
   }
 }
+
 
 
 
