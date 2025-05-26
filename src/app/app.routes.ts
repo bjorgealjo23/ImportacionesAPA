@@ -1,42 +1,17 @@
 import { Routes } from '@angular/router';
+import { ContactanosComponent, CotizacionComponent, HomeComponent, NosotrosComponent } from './public/landing/components';
+import { LandingComponent } from './public/landing/landing.component';
 
 export const routes: Routes = [
   {
     path: '',
-    loadComponent: () =>
-      import('./public/landing/landing.component').then(
-        (module) => module.LandingComponent
-      ),
-    children: [
-      {
-        path: '',
-        loadComponent: () =>
-          import('./public/landing/components/home/home.component').then(
-            (module) => module.HomeComponent
-          ),
-      },
-      {
-        path: 'cotizacion',
-        loadComponent: () =>
-          import(
-            './public/landing/components/cotizacion/cotizacion.component'
-          ).then((module) => module.CotizacionComponent),
-      },
-      {
-        path: 'nosotros',
-        loadComponent: () =>
-          import(
-            './public/landing/components/nosotros/nosotros.component'
-          ).then((module) => module.NosotrosComponent),
-      },
-      {
-        path: 'contactanos',
-        loadComponent: () =>
-          import(
-            './public/landing/components/contactanos/contactanos.component'
-          ).then((module) => module.ContactanosComponent),
-      },
-    ],
+    component: LandingComponent,
+     children: [
+            { path: '', component: HomeComponent },
+            { path: 'cotizacion', component: CotizacionComponent },
+            { path: 'nosotros', component: NosotrosComponent },
+            { path: 'contactanos', component: ContactanosComponent },
+        ]
   },
   {
     path: 'acceso',

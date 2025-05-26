@@ -26,9 +26,8 @@ export class PublicHeaderComponent {
   }
 
   ngOnInit(): void {
-    // Asegurar que activeSection tenga un valor por defecto
     if (!this.activeSection) {
-      this.activeSection = 'home';
+      this.activeSection = '';
     }
   }
 
@@ -38,60 +37,30 @@ export class PublicHeaderComponent {
     { label: 'Sobre Nosotros', route: 'nosotros', path: '/nosotros' },
   ];
 
-  // Método para verificar si un item está activo
   isActiveItem(route: string): boolean {
     return this.activeSection === route;
   }
 
   // Navegación suave a las secciones
   navigateToSection(route: string, path: string): void {
-    this.isMenuOpen = false; // Cerrar menú en móvil
+    this.isMenuOpen = false; 
 
     if (
       this.router.url.startsWith('/acceso') ||
       this.router.url.startsWith('/admin')
     ) {
-      // Si estamos en otra página, navegar normalmente
       this.router.navigate([path]);
     } else {
-      // Si estamos en landing, actualizar URL y hacer scroll
       this.router.navigate([path]).then(() => {
         if (this.isBrowser) {
           setTimeout(() => {
             const section = document.getElementById(route);
             if (section) {
               const headerHeight = 120;
-              const sectionTop = section.offsetTop - headerHeight;
-
-              window.scrollTo({
-                top: sectionTop,
-                behavior: 'smooth',
-              });
-            }
-          }, 100);
-        }
-      });
-    }
-  }
-
-  // Navegación a contactanos
-  navigateToContact(): void {
-    this.isMenuOpen = false;
-
-    if (
-      this.router.url.startsWith('/acceso') ||
-      this.router.url.startsWith('/admin')
-    ) {
-      this.router.navigate(['/contactanos']);
-    } else {
-      this.router.navigate(['/contactanos']).then(() => {
-        if (this.isBrowser) {
-          setTimeout(() => {
-            const section = document.getElementById('contactanos');
-            if (section) {
-              const headerHeight = 120;
-              const sectionTop = section.offsetTop - headerHeight;
-
+              console.log(section)
+              // console.log(section.offsetTop)
+              const previusSectioTop = section.offsetTop + 15;
+              const sectionTop = previusSectioTop - headerHeight;
               window.scrollTo({
                 top: sectionTop,
                 behavior: 'smooth',
@@ -111,4 +80,7 @@ export class PublicHeaderComponent {
   toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen;
   }
+
+
+
 }

@@ -17,5 +17,4 @@ export interface IItemImage {
 export class CarouselComponent {
 
   @Input() lstImagenes: IItemImage[] = [];
-
 }

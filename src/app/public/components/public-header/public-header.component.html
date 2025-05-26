@@ -1,35 +1,3 @@
-<!-- <nav class="style-section-nabvar">
-  <div class="custom-navbar">
-    <img src="assets/images/logo.svg" alt="Logo" class="style-inicio-imagen"/>
-
-    <button class="menu-toggle" *ngIf="!isMenuOpen" (click)="isMenuOpen = !isMenuOpen">
-      &#9776;
-    </button>
-    <a  class="btn-close" type="button"  *ngIf="isMenuOpen" (click)="isMenuOpen = !isMenuOpen">
-      <i class="fas fa-times"></i>
-    </a>
-
-    <ul class="nav-items" [class.open]="isMenuOpen">
-      <ng-container *ngFor="let item of items">
-        <li class="nav-item mt-3">
-          <a [routerLink]="item.routerLink">{{ item.label }}</a>
-        </li>
-      </ng-container>
-
-      <ul class="container-derecha">
-        <li class="nav-item mt-3">
-          <a [routerLink]="'/contactanos'">Contáctanos</a>
-        </li>
-        <li>
-          <button class="btn" (click)="irInicioSesion()">
-            <i class="far fa-user-circle"></i> Acceso
-          </button>
-        </li>
-      </ul>
-    </ul>
-  </div>
-</nav> -->
-
 <nav class="style-section-nabvar">
   <div class="custom-navbar">
     <img src="assets/images/logo.svg" alt="Logo" class="style-inicio-imagen"/>
@@ -53,7 +21,7 @@
 
       <ul class="container-derecha">
         <li class="nav-item mt-3" [class.active]="isActiveItem('contactanos')">
-          <a (click)="navigateToContact()"
+           <a (click)="navigateToSection('contactanos', '/contactanos')"
              [class.active]="isActiveItem('contactanos')">
             Contáctanos
           </a>

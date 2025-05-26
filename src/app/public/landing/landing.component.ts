@@ -8,16 +8,16 @@ import { isPlatformBrowser } from '@angular/common';
 @Component({
   selector: 'app-landing',
   standalone: true,
-  imports: [ PublicHeaderComponent, PublicFooterComponent, HomeComponent, CotizacionComponent,NosotrosComponent,ContactanosComponent],
+  imports: [PublicHeaderComponent, PublicFooterComponent, HomeComponent, CotizacionComponent, NosotrosComponent, ContactanosComponent],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.scss'
 })
-export class LandingComponent implements OnInit, OnDestroy, AfterViewInit  {
+export class LandingComponent implements OnInit, OnDestroy, AfterViewInit {
 
 
   @ViewChild('mainContent', { static: true }) mainContent!: ElementRef;
 
-  activeSection: string = 'home';
+  activeSection: string = '';
   private isNavigating: boolean = false;
   private routerSubscription?: Subscription;
   private scrollSubscription?: Subscription;
@@ -31,7 +31,6 @@ export class LandingComponent implements OnInit, OnDestroy, AfterViewInit  {
   }
 
   ngOnInit(): void {
-    // Escuchar cambios de ruta para scroll automático
     this.routerSubscription = this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe((event) => {
@@ -42,11 +41,8 @@ export class LandingComponent implements OnInit, OnDestroy, AfterViewInit  {
   }
 
   ngAfterViewInit(): void {
-    // Solo configurar scroll spy si estamos en el navegador
     if (this.isBrowser) {
       this.setupScrollSpy();
-
-      // Manejar la ruta inicial
       this.handleRouteChange(this.router.url);
     }
   }
@@ -61,35 +57,12 @@ export class LandingComponent implements OnInit, OnDestroy, AfterViewInit  {
   }
 
   private handleRouteChange(url: string): void {
-    const route = url.split('/')[1] || 'home';
+    const route = url.split('/')[1] || '';
     this.activeSection = route;
-
-    // Marcar que estamos navegando para evitar conflictos con scroll spy
     this.isNavigating = true;
-
-    // Scroll suave a la sección correspondiente
     setTimeout(() => {
-      this.scrollToSection(route);
-      // Restaurar el scroll spy después del scroll
-      setTimeout(() => {
-        this.isNavigating = false;
-      }, 1000);
-    }, 100);
-  }
-
-  private scrollToSection(sectionId: string): void {
-    if (!this.isBrowser) return;
-
-    const section = document.getElementById(sectionId);
-    if (section) {
-      const headerHeight = 120; // Ajusta según la altura de tu header
-      const sectionTop = section.offsetTop - headerHeight;
-
-      window.scrollTo({
-        top: sectionTop,
-        behavior: 'smooth'
-      });
-    }
+      this.isNavigating = false;
+    }, 1000);
   }
 
   private setupScrollSpy(): void {
@@ -97,18 +70,16 @@ export class LandingComponent implements OnInit, OnDestroy, AfterViewInit  {
 
     const sections = ['home', 'cotizacion', 'nosotros', 'contactanos'];
 
-    // Función para detectar qué sección está visible
     const checkActiveSection = () => {
-      const scrollPosition = window.scrollY + 150; // Offset para activar antes
+      const scrollPosition = window.scrollY + 105;
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = document.getElementById(sections[i]);
         if (section && section.offsetTop <= scrollPosition) {
           if (this.activeSection !== sections[i]) {
             this.activeSection = sections[i];
-            // Solo actualizar la URL si no estamos navegando activamente
             if (!this.isNavigating) {
-              const newUrl = sections[i] === 'home' ? '/' : `/${sections[i]}`;
+              const newUrl = sections[i] === '' ? '/' : `/${sections[i]}`;
               this.router.navigate([newUrl], { replaceUrl: true });
             }
           }
@@ -116,20 +87,11 @@ export class LandingComponent implements OnInit, OnDestroy, AfterViewInit  {
         }
       }
     };
-
-    // Escuchar el evento de scroll
     window.addEventListener('scroll', checkActiveSection, { passive: true });
-
-    // Cleanup cuando se destruya el componente
     this.scrollSubscription = new Subscription(() => {
       window.removeEventListener('scroll', checkActiveSection);
     });
   }
-
-
-
-
-
 }
 
 
