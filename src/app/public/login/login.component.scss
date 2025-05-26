@@ -8,6 +8,16 @@
 
     .style-container-login {
         width: 100%;
+        padding-top: 5%;
+
+        @media (max-width: 767px) {
+            padding-top: 25%;
+        }
+
+        @media (min-width: 1023px) and (max-width: 1439px) {
+            padding-top: 9%;
+        }
+
     }
 
     .style-marco-login {
@@ -26,7 +36,7 @@
         background: $color-third;
 
         @media (max-width: 767px) {
-              border-radius: 10px 10px 0 10px !important;
+            border-radius: 10px 10px 0 10px !important;
         }
 
 

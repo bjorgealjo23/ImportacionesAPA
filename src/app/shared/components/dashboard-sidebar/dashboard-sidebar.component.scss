@@ -127,8 +127,8 @@
   text-align: left;
   margin-top: 10px;
 
-  &:hover{
-      background-color: $color-fourth;
+  &:hover {
+    background-color: $color-fourth;
   }
 
   &.active {
@@ -138,4 +138,8 @@
     text-decoration: none;
     width: 100%;
   }
+}
+
+.style-sidebar-dash .sidebar-content {
+  overflow-y: hidden;
 }
